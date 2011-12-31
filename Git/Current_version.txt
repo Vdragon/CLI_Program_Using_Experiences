@@ -40,7 +40,7 @@ $ git help <verb>
 $ git <verb> --help
 $ man git-<verb>
 
-////將已變更的檔案加入staged area（尚未commit）（可用萬用字元）
+////更新或加入已變更的檔案至index(staged area)中（尚未commit）（可用glob patterns）
 //檔案
 $ git add 「檔案名稱」
 //目錄
@@ -48,8 +48,21 @@ $ git add 「目錄名稱」
 //自動將有在commit中的檔案更新
 git add -all
 
-//將staged area中的變更檔案commit出去
-git commit -m '「此commit的描述」'
+////將檔案自working tree及index中移除
+//檔案
+$ git rm 「檔案名稱」
+//目錄
+$ git rm -r 「目錄名稱」
+
+//將檔案只從index(staging area)中移除
+//檔案
+git rm --cached 「檔案名稱」
+
+//目錄
+$ git rm -r --cached 「目錄名稱」
+
+//globbing patterns
+$ git rm --cached 「globbing patterns」
 
 //將遠端repository複製到本地端
 git clone 「repository的位址」
@@ -61,6 +74,16 @@ git diff
 //檢視已修改且以add進staging area（仍尚未commit）的檔案差異
 git diff --cached
 git diff --staged
+
+//將index(staged area)中的變更檔案commit至working tree
+git commit
+git commit -m '「此commit的描述」'
+
+//commit更詳細的資料（包括diff）
+git commit -v
+
+//直接將先前commit所包含的檔案commit至working tree(不需要git add)
+git commit --all
 
 //移除所有沒有納入版本控制的檔案
 git clean
