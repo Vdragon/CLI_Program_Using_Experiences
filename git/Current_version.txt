@@ -45,6 +45,8 @@ $ man git-<verb>
 $ git add 「檔案名稱」
 //目錄
 $ git add 「目錄名稱」
+//自動將有在commit中的檔案更新
+git add -all
 
 //將staged area中的變更檔案commit出去
 git commit -m '「此commit的描述」'
@@ -55,4 +57,6 @@ git clone 「repository的位址」 「要自訂的repository目錄」
 
 //移除所有沒有納入版本控制的檔案
 git clean
-
+-d 包括目錄
+-d -f -f 包括內含repo的目錄
+--dry-run 僅跑過一遍，不實際移除
