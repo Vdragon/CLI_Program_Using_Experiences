@@ -40,4 +40,19 @@ $ git help <verb>
 $ git <verb> --help
 $ man git-<verb>
 
-//
+////將已變更的檔案加入staged area（尚未commit）（可用萬用字元）
+//檔案
+$ git add 「檔案名稱」
+//目錄
+$ git add 「目錄名稱」
+
+//將staged area中的變更檔案commit出去
+git commit -m '「此commit的描述」'
+
+//將遠端repository複製到本地端
+git clone 「repository的位址」
+git clone 「repository的位址」 「要自訂的repository目錄」
+
+//移除所有沒有納入版本控制的檔案
+git clean
+
