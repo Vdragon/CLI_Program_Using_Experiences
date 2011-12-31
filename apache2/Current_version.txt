@@ -1,0 +1,2 @@
+##檢查設定值語法
+apachectl configtest

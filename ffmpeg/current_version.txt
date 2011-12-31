@@ -1,0 +1,307 @@
+命令模式：
+ffmpeg [global options] [[infile options][‘-i’ infile]]... {[outfile options] outfile}...
+-codec[:stream_specifier] codec (input/output,per-stream)
+
+1.TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4
+--input--
+3524Kbps 1920*1080 29.97fps AVC(High@L4.0)
+151Kbps 44.1KHz 2channels AAC(LC)
+檔案大小：13.8MiB
+
+--output--
+391.56Kbps->430Kbps(+10%) 640*360 29.97fps MPEG Simple Profile
+(copy)151Kbps 44.1KHz 2channels AAC(LC)
+預期檔案大小：2.12MiB
+
+--指令--
+  1.最簡
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.mp4'
+Video: mpeg4, yuv420p, 1920x1080, q=2-31, 200 kb/s, 30k tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, s16, 64 kb/s
+檔案大小：7MiB
+
+  2.鎖定29.97fps
+-r fps
+           Set frame rate (Hz value, fraction or abbreviation), (default = 25).
+
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.mp4'
+Video: mpeg4, yuv420p, 1920x1080, q=2-31, 200 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, s16, 64 kb/s
+檔案大小：7MiB
+
+  3.鎖定29.97fps + 影像位元頻率=400Kbps + 影像解析度=640*360(nHD)
+-b bitrate
+           Set the video bitrate in bit/s (default = 200 kb/s).
+             
+-s size
+           Set frame size. The format is wxh (ffserver default = 160x128, ffmpeg
+           default = same as source).
+           
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 400KB -s 640x360 '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.mp4'
+Video: mpeg4, yuv420p, 640x360, q=2-31, 3200 kb/s, 2997 tbn, 29.97 tbc（有問題）
+Audio: libvo_aacenc, 44100 Hz, stereo, s16, 64 kb/s
+檔案大小：7.8MiB（有問題）
+
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 400k -s 640x360 '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.mp4'
+Video: mpeg4, yuv420p, 640x360, q=2-31, 400 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, s16, 64 kb/s
+檔案大小：2MiB
+
+  4.鎖定29.97fps + 影像位元率=400Kbps + 影像解析度=640*360(nHD) + 影像編碼器=MPEG-4 Part 2
+-vcodec codec
+           Force video codec to codec. Use the "copy" special value to tell that the
+           raw codec data must be copied as is.
+           
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 400k -s 640x360 -vcodec mpeg4 '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.mp4'
+Video: mpeg4, yuv420p, 640x360, q=2-31, 400 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, s16, 64 kb/s
+檔案大小：2MiB
+
+  5.鎖定29.97fps + 影像位元率=400Kbps + 影像解析度=640*360(nHD) + 影像編碼器=MPEG-4 Part 2 + 第一階段處理 + 第二階段處理
+-an Disable audio recording.
+-pass n
+           Select the pass number (1 or 2). It is used to do two-pass video
+           encoding. The statistics of the video are recorded in the first pass into
+           a log file (see also the option -passlogfile), and in the second pass
+           that log file is used to generate the video at the exact requested
+           bitrate.  On pass 1, you may just deactivate audio and set output to
+           null, examples for Windows and Unix:
+
+                   ffmpeg -i foo.mov -vcodec libxvid -pass 1 -an -f rawvideo -y NUL
+                   ffmpeg -i foo.mov -vcodec libxvid -pass 1 -an -f rawvideo -y /dev/null
+                   
+-passlogfile prefix
+           Set two-pass log file name prefix to prefix, the default file name prefix
+           is ``ffmpeg2pass''. The complete file name will be PREFIX-N.log, where N
+           is a number specific to the output stream.
+           
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 400k -s 640x360 -vcodec mpeg4 -pass 1 -passlogfile 1_pass '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.1_pass.mp4'
+Video: mpeg4, yuv420p, 640x360, q=2-31, pass 1, 400 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, s16, 64 kb/s
+1_pass_log:1_pass-0.log
+檔案大小：2MiB
+品質：「聽說」比較差
+
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 400k -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass '/dev/null'
+Video: mpeg4, yuv420p, 640x360, q=2-31, pass 1, 400 kb/s, 90k tbn, 29.97 tbc
+Audio:N/A
+1_pass_log:1_pass-0.log
+檔案大小：N/A
+
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 400k -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+Video: mpeg4, yuv420p, 640x360, q=2-31, pass 2, 400 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, s16, 64 kb/s
+檔案大小：1.7MiB（比較小）
+品質：「聽說」比較好
+
+  6.鎖定29.97fps + 影像位元率=430Kbps + 影像解析度=640*360(nHD) + 影像編碼器=MPEG-4 Part 2 + 第一階段處理 + 第二階段處理 + ISO 639(-2?)語言代碼（目前不想用）
+-vlang code
+           Set the ISO 639 language code (3 letters) of the current video stream.
+  chi, zho, zhx(-5) 漢語
+  jpn 日語
+  eng 英語
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -vlang zhx '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+Video: mpeg4, yuv420p, 640x360, q=2-31, pass 2, 430 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, s16, 64 kb/s
+檔案大小：1.9MiB
+
+
+  7.鎖定29.97fps + 影像位元率=430Kbps + 影像解析度=640*360(nHD) + 影像編碼器=MPEG-4 Part 2 + 影像第一階段處理 + 影像第二階段處理 + 鎖定雙聲道（但其實是自動選取相同數量）
+-ac channels
+           Set the number of audio channels. For input streams it is set by default
+           to 1, for output streams it is set by default to the same number of audio
+           channels in input. If the input file has audio streams with different
+           channel count, the behaviour is undefined.
+           
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -ac 2 '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+Video: mpeg4, yuv420p, 640x360, q=2-31, pass 2, 430 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, s16, 64 kb/s
+檔案大小：1.9MiB
+
+  8.鎖定29.97fps + 影像位元率=430Kbps + 影像解析度=640*360(nHD) + 影像編碼器=MPEG-4 Part 2 + 影像第一階段處理 + 影像第二階段處理 + 鎖定聲音聲道數=2（但其實是自動選取相同數量） + 鎖定聲音位元率=160Kbps
+-ab bitrate
+           Set the audio bitrate in bit/s (default = 64k).
+           
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -ac 2 -ab 160k '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+Video: mpeg4, yuv420p, 640x360, q=2-31, pass 2, 430 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, s16, 160 kb/s
+檔案大小：2.2MiB
+
+  9.鎖定29.97fps + 影像位元率=430Kbps + 影像解析度=640*360(nHD) + 影像編碼器=MPEG-4 Part 2 + 影像第一階段處理 + 影像第二階段處理 + 鎖定聲音聲道數=2（但其實是自動選取相同數量）（關閉） + 鎖定聲音位元率=160Kbps（關閉） + 直接複製聲音資料
+-acodec codec
+           Force audio codec to codec. Use the "copy" special value to specify that
+           the raw codec data must be copied as is.
+           
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -ac 2 -ab 160k -acodec copy '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+Video: mpeg4, yuv420p, 640x360, q=2-31, pass 2, 430 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, 151 kb/s
+檔案大小：2.2MiB
+
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -acodec copy '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+Video: mpeg4, yuv420p, 640x360, q=2-31, pass 2, 430 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, 151 kb/s
+檔案大小：2.2MiB
+
+  10.鎖定29.97fps + 影像位元率=430Kbps + 影像解析度=640*360(nHD) + 影像編碼器=MPEG-4 Part 2 + 影像第一階段處理 + 影像第二階段處理 + 鎖定聲音聲道數=2（但其實是自動選取相同數量）（關閉） + 鎖定聲音位元率=160Kbps（關閉） + 直接複製聲音資料 + 聲音語系代碼(ISO 639-2)（暫時不想用）
+-alang code
+           Set the ISO 639 language code (3 letters) of the current audio stream.
+  
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -acodec copy -alang chi '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+
+  11.聲音檔tag（標籤）資料（暫時不想用）
+-atag fourcc/tag
+           Force audio tag/fourcc.
+
+  12.字幕相關（暫時不想用）
+-scodec codec
+           Force subtitle codec ('copy' to copy stream).
+
+       -newsubtitle
+           Add a new subtitle stream to the current output stream.
+-scodec codec
+           Force subtitle codec ('copy' to copy stream).
+
+       -newsubtitle
+           Add a new subtitle stream to the current output stream.   
+
+  13.mapping
+-map input_file_id.input_stream_id[:sync_file_id.sync_stream_id]
+           Designate an input stream as a source for the output file. Each input
+           stream is identified by the input file index input_file_id and the input
+           stream index input_stream_id within the input file. Both indexes start at
+           0. If specified, sync_file_id.sync_stream_id sets which input stream is
+           used as a presentation sync reference.
+
+           The "-map" options must be specified just after the output file.  If any
+           "-map" options are used, the number of "-map" options on the command line
+           must match the number of streams in the output file. The first "-map"
+           option on the command line specifies the source for output stream 0, the
+           second "-map" option specifies the source for output stream 1, etc.
+
+           For example, if you have two audio streams in the first input file, these
+           streams are identified by "0.0" and "0.1". You can use "-map" to select
+           which stream to place in an output file. For example:
+
+                   ffmpeg -i INPUT out.wav -map 0.1
+
+           will map the input stream in INPUT identified by "0.1" to the (single)
+           output stream in out.wav.
+
+           For example, to select the stream with index 2 from input file a.mov
+           (specified by the identifier "0.2"), and stream with index 6 from input
+           b.mov (specified by the identifier "1.6"), and copy them to the output
+           file out.mov:
+
+                   ffmpeg -i a.mov -i b.mov -vcodec copy -acodec copy out.mov -map 0.2 -map 1.6
+           To add more streams to the output file, you can use the "-newaudio",
+           "-newvideo", "-newsubtitle" options.
+-map_metadata outfile[,metadata]:infile[,metadata]
+           Set metadata information of outfile from infile. Note that those are file
+           indices (zero-based), not filenames.  Optional metadata parameters
+           specify, which metadata to copy - (g)lobal (i.e. metadata that applies to
+           the whole file), per-(s)tream, per-(c)hapter or per-(p)rogram. All
+           metadata specifiers other than global must be followed by the
+           stream/chapter/program number. If metadata specifier is omitted, it
+           defaults to global.
+
+           By default, global metadata is copied from the first input file to all
+           output files, per-stream and per-chapter metadata is copied along with
+           streams/chapters. These default mappings are disabled by creating any
+           mapping of the relevant type. A negative file index can be used to create
+           a dummy mapping that just disables automatic copying.
+
+           For example to copy metadata from the first stream of the input file to
+           global metadata of the output file:
+
+                   ffmpeg -i in.ogg -map_metadata 0:0,s0 out.mp3
+
+       -map_chapters outfile:infile
+           Copy chapters from infile to outfile. If no chapter mapping is specified,
+           then chapters are copied from the first input file with at least one
+           chapter to all output files. Use a negative file index to disable any
+           chapter copying.
+                              
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -acodec copy '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.aac' -map 0.1
+Audio: libvo_aacenc, 44100 Hz, stereo, 151 kb/s
+
+  14.鎖定29.97fps + 影像位元率=430Kbps + 影像解析度=640*360(nHD) + 影像編碼器=MPEG-4 Part 2 + 影像第一階段處理 + 影像第二階段處理 + 鎖定聲音聲道數=2（但其實是自動選取相同數量）（關閉） + 鎖定聲音位元率=160Kbps（關閉） + 直接複製聲音資料 + 指定線程數(?)（應該沒有效）
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -acodec copy -threads 8 '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+
+  15.鎖定29.97fps + 影像位元率=430Kbps（也要開著） + 影像解析度=640*360(nHD) + 影像編碼器=MPEG-4 Part 2 + 影像第一階段處理 + 影像第二階段處理 + 鎖定聲音聲道數=2（但其實是自動選取相同數量）（關閉） + 鎖定聲音位元率=160Kbps（關閉） + 直接複製聲音資料 + 指定線程數(?)（應該沒有效） + 影像採用可變位元率（最佳品質(q=1)）
+       ·   If your computer is not fast enough, you can speed up the compression at
+           the expense of the compression ratio. You can use '-me zero' to speed up
+           motion estimation, and '-intra' to disable motion estimation completely
+           (you have only I-frames, which means it is about as good as JPEG
+           compression).
+       ·   To have a constant quality (but a variable bitrate), use the option
+           '-qscale n' when 'n' is between 1 (excellent quality) and 31 (worst
+           quality).
+
+       ·   When converting video files, you can use the '-sameq' option which uses
+           the same quality factor in the encoder as in the decoder.  It allows
+           almost lossless encoding.
+           
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -qscale 1 -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass -threads 8 '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -qscale 1 -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -acodec copy -threads 8 '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+Video: mpeg4, yuv420p, 640x360, q=2-31, pass 2, 430 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, 151 kb/s
+q=1
+bitrate=2187.0kbits/s
+檔案大小：8.3MiB
+品質：好很多
+
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -sameq -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass -threads 8  '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -sameq -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -acodec copy -threads 8 '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+q=0（怪怪的）
+bitrate=2187.0kbits/s
+檔案大小：8.3MiB
+
+  16.鎖定29.97fps + 影像位元率=430Kbps（也要開著） + 影像解析度=640*360(nHD) + 影像編碼器=MPEG-4 Part 2 + 影像第一階段處理 + 影像第二階段處理 + 鎖定聲音聲道數=2（但其實是自動選取相同數量）（關閉） + 鎖定聲音位元率=160Kbps（關閉） + 直接複製聲音資料 + 指定線程數(?)（應該沒有效） + 影像採用可變位元率（區間）
+
+-qmin q
+           minimum video quantizer scale (VBR)
+
+       -qmax q
+           maximum video quantizer scale (VBR)
+
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -qmin 10 -qmax 1 -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass -threads 8 '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -qmin 10 -qmax 1 -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -acodec copy -threads 8 '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+Video: mpeg4, yuv420p, 640x360, q=10-1, pass 2, 430 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, 151 kb/s
+q=7
+bitrate=590.8kbits/s
+檔案大小：2.2MB
+品質：不太好
+
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -qmin 5 -qmax 1 -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass -threads 8 '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -qmin 5 -qmax 1 -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -acodec copy -threads 8 '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+Video: mpeg4, yuv420p, 640x360, q=5-1, pass 2, 430 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, 151 kb/s
+q=7
+bitrate=637kbits/s
+檔案大小：2.4MiB
+品質：更差了
+
+  17.鎖定29.97fps + 影像位元率=430Kbps（也要開著） + 影像解析度=640*360(nHD) + 影像編碼器=MPEG-4 Part 2 + 影像第一階段處理 + 影像第二階段處理 + 鎖定聲音聲道數=2（但其實是自動選取相同數量）（關閉） + 鎖定聲音位元率=160Kbps（關閉） + 直接複製聲音資料 + 指定線程數(?)（應該沒有效） + 影像採用可變位元率（q=6）
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -qscale 6 -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass -threads 8 '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -qscale 6 -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -acodec copy -threads 8 '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+Video: mpeg4, yuv420p, 640x360, q=2-31, pass 2, 430 kb/s, 2997 tbn, 29.97 tbc
+Audio: libvo_aacenc, 44100 Hz, stereo, 151 kb/s
+q=6
+bitrate=825kbits/s
+檔案大小：3.1MiB
+品質：還可以
+
+
+  X.
+ffmpeg -y -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -qscale 1 -s 640x360 -vcodec mpeg4 -pass 1 -an -f rawvideo -passlogfile 1_pass -threads 8 '/dev/null'
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -r 29.97 -b 430k -qscale 1 -s 640x360 -vcodec mpeg4 -pass 2 -passlogfile 1_pass -acodec copy -threads 8 '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.2_pass.mp4'
+  X.最佳化
+ffmpeg -i '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).mp4' -codec:v mpeg4 -codec:a copy '/media/FILES/DATA/影片/廣告/多拉Ａ夢（小叮噹）真人版/轉檔/Nokia 5800 XpressMusic/TOYOTA ReBORN 「大雄不靠哆啦A夢」篇 30s(繁中).5800.mp4'

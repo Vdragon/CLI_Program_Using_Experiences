@@ -1,0 +1,3 @@
+##更新資料庫
+rkhunter --update
+##

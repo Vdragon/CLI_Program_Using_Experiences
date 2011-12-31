@@ -1,0 +1,43 @@
+//智慧財產權歸屬：Ｖ字龍(Vdragon, pika1021@gmail.com)
+//使用的智慧財產授權：
+//  創用 CC 姓名標示-相同方式分享 台灣 授權條款 當前最新版本（下方所列的網址為該授權條款編輯當時的最新版本，可能與最新版本有些差異）
+//  http://creativecommons.org/licenses/by-sa/3.0/deed.zh_TW
+//    您擁有的權利及義務簡單描述如下：
+//      1.您必須於本作品之衍伸作品中標明本作品的智慧財產權歸屬者（格式如上）。
+//      2.若您發佈本作品的衍伸作品您必須以相同的授權條款授權您的作品。
+//      3.除了以上兩點以及此授權條款中定義的細節之外，您可以自由的使用本作品。
+//      4.如果您需要使用本作品於授權條款所限制的範圍，歡迎來信(pika1021@gmail.com)洽詢。
+
+//設定局域個人資料
+git config user.name "「要取的名字」"
+
+//設定廣域個人資料
+git config --global user.name "「要取的名字」"
+
+//設定局域電子郵件地址
+git config user.email 「要設定的電子郵件地址」
+
+//設定廣域電子郵件地址
+git config --global user.email 「要設定的電子郵件地址」
+
+//設定廣域diff工具
+git config --global merge.tool 「使用的軟體路徑」
+部份可用選項：vimdiff、gvimdiff
+
+//設定編輯軟體
+git config --global core.editor 「使用的軟體路徑」
+部份可用選項：emacs、vi(m)
+
+//顯示設定值
+git config --list
+
+//顯示特定設定值
+git config 「設定值的名稱」
+全域：--global
+
+//檢視特定功能的說明
+$ git help <verb>
+$ git <verb> --help
+$ man git-<verb>
+
+//

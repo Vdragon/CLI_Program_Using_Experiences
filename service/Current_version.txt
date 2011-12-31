@@ -1,0 +1,3 @@
+/etc/init.d/<service_name> <start|stop|etc.>
+service <service_name> <start | stop | restart | etc
+
