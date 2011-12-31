@@ -55,10 +55,15 @@ git commit -m '「此commit的描述」'
 git clone 「repository的位址」
 git clone 「repository的位址」 「要自訂的repository目錄」
 
+//檢視已修改但未add進staging area的檔案差異
+git diff
+
+//檢視已修改且以add進staging area（仍尚未commit）的檔案差異
+git diff --cached
+git diff --staged
+
 //移除所有沒有納入版本控制的檔案
 git clean
 -d 包括目錄
 -d -f -f 包括內含repo的目錄
 --dry-run 僅跑過一遍，不實際移除
-
-//
