@@ -54,6 +54,9 @@ $ git rm 「檔案名稱」
 //目錄
 $ git rm -r 「目錄名稱」
 
+//globbing patterns（*需要escape才能使用）
+$ git rm 「globbing patterns」
+
 //將檔案只從index(staging area)中移除
 //檔案
 git rm --cached 「檔案名稱」
@@ -85,6 +88,22 @@ git commit -v
 //直接將先前commit所包含的檔案commit至working tree(不需要git add)
 git commit --all
 
+////更名
+git mv 「更名前檔案名稱」 「更名後檔案名稱」
+
+////檢視commit紀錄
+git log
+
+//檢視最後兩筆commit紀錄
+git log -2
+
+//檢視包含diff的commit紀錄
+git log -p
+
+//顯示統計圖
+git log --stat
+
+//以其他方式
 //移除所有沒有納入版本控制的檔案
 git clean
 -d 包括目錄
