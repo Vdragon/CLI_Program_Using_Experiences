@@ -1,5 +1,4 @@
 #.gitignore範本
-#範本版本：1.00(0)
 
 ##.gitignore用途
 #   避免git將不想add至staging area的檔案add到staging area中。
@@ -13,6 +12,10 @@
 #  build/←忽略build目錄下的所有檔案
 #  doc/*.txt←doc/a.txt會被忽略但是doc/a/b.txt則不會被忽略（那怎樣才能忽略呢？）
 
+##Linux隱藏檔
+.*
+!.gitignore
+
 ##文字編輯軟體備份檔
 #通用備份檔副檔名
 *~
@@ -20,6 +23,17 @@
 #Kate的備份檔
 *.kate-swp
 
-#Object Code...
+##編譯時產生的檔案
+#Compiled Object files
+#*.slo
+#*.lo
 *.o
+*.obj
 
+# Compiled Dynamic libraries
+*.so
+
+# Compiled Static libraries
+#*.lai
+#*.la
+*.a
