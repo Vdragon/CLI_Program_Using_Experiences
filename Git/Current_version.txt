@@ -170,6 +170,9 @@ git remote
 //顯示網址
 git remote -v
 
+//加入遠端repository
+git remote add 「repository名稱」 「repositor URL」
+
 ////git fetch相關指令
 //將遠端repository中才有的資料加入本地repository中（但在merge之前不會加入working tree）
 git fetch 「遠端repository名稱」
@@ -201,15 +204,6 @@ git tag -a 「tag名稱」 「commit的hash值」
 //建立一個lightweiht tag名稱
 git tag 「tag名稱」
 
-//將tag傳到遠端repository上
-git push 「遠端repository名稱」 「tag名稱」
-
-//將所有遠端repository沒有的tag傳到遠端repository上
-git push 「遠端repository名稱」 --tags
-
-//新增一個新的branch
-git branch 「branch名稱」
-
 ////git checkout相關指令
 //切換到另一個branch
 git checkout 「branch名稱」
@@ -225,6 +219,9 @@ git merge 「branch名稱」
 git mergetool
 
 ////git branch相關指令
+//新增一個新的branch
+git branch 「branch名稱」
+
 //刪除一個branch
 git branch -d 「branch名稱」
 
@@ -241,6 +238,16 @@ git branch --merged
 
 //顯示所有未merge進master的branch
 git branch --no-merged
+
+////git push相關指令
+//將本地repo push到upstream remote repo(?)
+git push --set-upstream origin master
+
+//將tag傳到遠端repository上
+git push 「遠端repository名稱」 「tag名稱」
+
+//將所有遠端repository沒有的tag傳到遠端repository上
+git push 「遠端repository名稱」 --tags
 
 ////git cherry-pick相關指令
 //將某個commit拆分為多個commits
