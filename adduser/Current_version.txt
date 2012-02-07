@@ -1,0 +1,10 @@
+##使用方法
+adduser  [options]  [--home   DIR]   [--shell
+       SHELL] [--no-create-home] [--uid ID] [--firs‐
+       tuid ID] [--lastuid ID]  [--ingroup  GROUP  |
+       --gid  ID] [--disabled-password] [--disabled-
+       login] [--gecos  GECOS]  [--add_extra_groups]
+       [--encrypt-home] user
+
+##新增帳號
+adduser 「帳號名稱」

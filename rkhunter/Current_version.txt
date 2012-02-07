@@ -1,3 +1,33 @@
-##更新資料庫
+##模式
+       rkhunter {--check | --unlock | --update | --versioncheck |
+                 --propupd [{filename | directory | package name},...] |
+                 --list [tests | {lang | languages} | rootkits | perl] |
+                 --config-check | --version | --help} [options]
+
+##更新rkhunter資料
 rkhunter --update
-##
+
+##檢查最新rkhunter程式版本
+rkhunter --versioncheck
+
+##檢查系統
+rkhunter --check
+
+##用目前的檔案屬性資料更新現有的資料
+rkhunter --propupd
+
+##列出rkhunter支援的項目
+#列出rkhunter支援的測試項目
+rkhunter --list tests
+
+#列出rkhunter支援的語言locale
+rkhunter --list languages
+
+##檢查rkhunter設定檔案語法
+rkhunter --config-check
+
+##變更rkhunter介面語言
+rkhunter --language <language>
+
+##使用package manager判斷檔案屬性
+rkhunter --pkgmgr {RPM  |  DPKG | BSD | SOLARIS |NONE}

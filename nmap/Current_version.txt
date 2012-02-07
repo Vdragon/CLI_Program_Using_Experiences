@@ -1,0 +1,7 @@
+####nmap
+
+##Perform an Aggressive Scan
+nmap -A [target]
+
+##IP Protocol Scan
+nmap -sO [target]

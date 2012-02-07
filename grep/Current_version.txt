@@ -1,0 +1,7 @@
+格式：
+  grep [OPTIONS] PATTERN [FILE...]
+  grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]
+
+選項 | Options
+忽略大小寫
+  --ignore-case

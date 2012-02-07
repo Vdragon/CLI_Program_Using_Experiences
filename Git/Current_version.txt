@@ -83,6 +83,12 @@ git commit -m '「此commit的描述」'
 //commit更詳細的資料（包括diff）
 git commit -v
 
+//修改最後的commit
+git commit --amend
+//git commit -m 'initial commit'
+//git add forgotten_file
+//git commit --amend
+
 //直接將先前commit所包含的檔案commit至working tree(不需要git add)
 git commit --all
 
@@ -150,12 +156,6 @@ git log 「多個條件」 --all-match
 //將commit log限制在某個檔案
 git log 「其他條件」 「檔案名稱」
 
-//修改最後的commit
-git commit --amend
-//git commit -m 'initial commit'
-//git add forgotten_file
-//git commit --amend
-
 ////git reset相關指令
 //將檔案unstage
 git reset HEAD -- 「檔案名稱」
@@ -171,7 +171,7 @@ git remote
 git remote -v
 
 //加入遠端repository
-git remote add 「repository名稱」 「repositor URL」
+git remote add 「repository名稱」 「repository URL」
 
 //檢視遠端repostitory的資訊
 git remote show 「遠端repository名稱」
