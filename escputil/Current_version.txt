@@ -1,0 +1,11 @@
+##escputil命令格式：
+       escputil [ -P printer | -r device ] [ -m model ] [ -u ] [ -c | -n | -a | -i |
+       -d | -o | -s | -l | -M | -h ] [ -q ]
+
+#讀取印表機狀態
+escputil -r /dev/lp0 --status
+
+#列出支援印表機型號
+escputil --list-models
+
+

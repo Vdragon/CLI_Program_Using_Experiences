@@ -1,0 +1,2 @@
+##基本用法（感謝Tetralet）
+cp -a foo foo.org; (在 foo 裡亂改)；diff -Nur foo.org foo
