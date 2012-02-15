@@ -1,0 +1,2 @@
+##start a program
+env WINEPREFIX="「wine prefix目錄」" wine 「可執行檔路徑。範例：C:\\windows\\command\\start.exe」
