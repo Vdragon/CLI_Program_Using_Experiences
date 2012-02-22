@@ -1,0 +1,23 @@
+##程式名稱：msgfmt
+##程式用途：將message catalog編譯成二進位格式
+##程式語法：
+  msgfmt [OPTION] filename.po ...
+
+##使用方式：
+#執行所有的檢查
+  --check
+
+#增加輸出內容
+  --verbose
+
+#輸出翻譯相關的數據
+  --statistics
+
+#寫入輸出至指定的檔案
+  --output-file=「檔案名稱」
+
+#當前最好的使用方式
+  msgfmt --check --verbose --statistics --output-file=
+
+#過去使用紀錄
+  msgfmt --check --verbose --statistics --output-file=codeblocks_zh_TW.mo  codeblocks_zh_TW.po

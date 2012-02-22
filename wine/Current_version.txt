@@ -1,2 +1,4 @@
 ##start a program
 env WINEPREFIX="「wine prefix目錄」" wine 「可執行檔路徑。範例：C:\\windows\\command\\start.exe」
+
+env WINEPREFIX="/home/vdragon/.PlayOnLinux/wineprefix/IE7" wine C:\\Program\ Files\\Internet\ Explorer\\iexplore.exe
