@@ -50,6 +50,10 @@ git add 「目錄名稱」
 ##自動將有在commit中的檔案更新
 git add -all
 
+##交談式處理
+--interactive
+-i
+q
 ####git rm相關指令
 ##將檔案自working tree及index中移除
 git rm 「檔案名稱」
@@ -62,6 +66,9 @@ git rm 「globbing patterns」
 git rm --cached 「檔案名稱」
 git rm -r --cached 「目錄名稱」
 git rm --cached 「globbing patterns」
+
+##不實際移除檔案
+git rm --dry-run
 
 ##將遠端repository複製到本地端
 git clone 「repository的位址」
@@ -160,6 +167,9 @@ git log 「其他條件」 「檔案名稱」
 ##將檔案unstage
 git reset HEAD -- 「檔案名稱」
 
+##將repository回歸原先狀態
+git reset --hard
+
 ####git remote相關指令
 ##顯示此repository的遠端repository
 git remote
@@ -213,7 +223,7 @@ git checkout 「branch名稱」
 git checkout -b 「branch名稱」
 
 ##（unstage檔案之後）將檔案的修改恢復到上次commit的狀態
-git checkout -- 「檔案名稱」
+git checkout -- 「檔案路徑」
 
 ####git merge相關指令
 ##將某branch與目前branch合併
@@ -224,7 +234,10 @@ git mergetool
 
 ####git branch相關指令
 ##新增一個新的branch
+#存取local的branch
 git branch 「branch名稱」
+#存取remote tracking branch
+git branch -r 「branch名稱」
 
 ##刪除一個branch
 git branch -d 「branch名稱」
@@ -254,6 +267,9 @@ git push 「遠端repository名稱」 「tag名稱」
 ##將所有遠端repository沒有的tag傳到遠端repository上
 git push 「遠端repository名稱」 --tags
 
+##移除遠端repository的branch
+git push 「遠端repository名稱」/「遠端repository branch名稱」
+
 ####git cherry-pick相關指令
 ##將某個commit拆分為多個commits
 git cherry-pick 「commit名稱」
@@ -261,6 +277,19 @@ git cherry-pick 「commit名稱」
 ####git clean相關指令
 ##移除所有沒有納入版本控制的檔案
 git clean
--d 包括目錄
--d -f -f 包括內含repo的目錄
---dry-run 僅跑過一遍，不實際移除
+
+##加入--force才會實際執行
+git clean --force
+
+##不實際刪除檔案
+git clean --force --dry-run
+
+##包括沒有納入版本控制的目錄
+git clean --force -d 
+
+##包括內含repo的目錄
+git clean  --force -d --force 
+
+##只移除在ignore規則中的檔案
+git clean --force -X
+

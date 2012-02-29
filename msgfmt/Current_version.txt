@@ -21,3 +21,4 @@
 
 #過去使用紀錄
   msgfmt --check --verbose --statistics --output-file=codeblocks_zh_TW.mo  codeblocks_zh_TW.po
+/usr/share/codeblocks/locale/zh_TW/
