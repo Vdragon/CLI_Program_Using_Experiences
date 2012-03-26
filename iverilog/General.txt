@@ -1,0 +1,11 @@
+#### iverilog - Icarus Verilog compiler
+
+##語法
+#iverilog    [-ESVv]   [-Bpath]   [-ccmdfile|-f
+cmdfile]   [-Dmacro[=defn]]
+       [-pflag=value] [-dname] [-g1995|-g2001|-g2005|
+-g<feature>] [-Iincludedir]
+       [-mmodule]  [-Mfile]  [-Nfile]  [-ooutputfilen
+ame] [-stopmodule] [-ttype]
+       [-Tmin/typ/max] [-Wclass] [-ypath] sourcefile
+

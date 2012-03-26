@@ -1,0 +1,2 @@
+//檢查 memory leak
+valgrind --tool=memcheck --leak-check=yes 『程式名稱（需加上Debug Symbol）』
