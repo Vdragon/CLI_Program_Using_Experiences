@@ -1,4 +1,4 @@
-##智慧財產權歸屬：Ｖ字龍(Vdragon, pika1021@gmail.com)
+﻿##智慧財產權歸屬：Ｖ字龍(Vdragon, pika1021@gmail.com)
 ##使用的智慧財產授權：
 ##  創用 CC 姓名標示-相同方式分享 台灣 授權條款 當前最新版本（下方所列的網址為該授權條款編輯當時的最新版本，可能與最新版本有些差異）
 ##  http://creativecommons.org/licenses/by-sa/3.0/deed.zh_TW
@@ -134,6 +134,9 @@ git log --pretty=format:"「format controll string」"
 ##%cd Committer date
 ##%cr Committer date, relative
 ##%s  Subject
+
+##將commit log 改為Changelog
+git log --graph --pretty=format:'%s - %h (%cd) %an' --abbrev-commit
 
 ##繪出commit圖
 git log --pretty=oneline --graph
@@ -285,11 +288,14 @@ git clean --force
 git clean --force --dry-run
 
 ##包括沒有納入版本控制的目錄
-git clean --force -d 
+git clean --force -d
 
 ##包括內含repo的目錄
-git clean  --force -d --force 
+git clean  --force -d --force
 
 ##只移除在ignore規則中的檔案
 git clean --force -X
 
+##git revert相關命令
+#回退某個commit
+git revert 「commit名稱」
