@@ -1,0 +1,5 @@
+﻿####apt-build : Fetch  sources  and  build  packages optimized for your architecture.
+
+##語法
+  apt-build [ options ] [ update ] [ upgrade ] [ world ] [ install  pkg ] [ remove pkg ] [ info pkg ]
+

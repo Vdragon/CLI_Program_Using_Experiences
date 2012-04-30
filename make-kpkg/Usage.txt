@@ -1,0 +1,23 @@
+﻿####make-kpkg：將linux原始程式碼build並打包成Debian套件的工具
+##語法：
+  make-kpkg [options] [target [target ...]]
+
+##基本使用方法
+#不登入於管理員權限帳號(or root)的編譯方式
+make-kpkg --rootcmd=fakeroot --revision=『套件版本』 --append-to-version=『直接後綴於套件版本後的字串』 kernel_image kernel_headers
+
+#登入於管理員權限帳號(or root)的編譯方式
+make-kpkg --revision=『套件版本』 --append-to-version=『直接後綴於套件版本後的字串』 kernel_image kernel_headers
+
+#####範例#####
+make-kpkg --revision=3.3.2 --append-to-version=-generic-Vdragon-mod kernel_image kernel_headers
+
+#新增環境變數(environment variable)讓make進行平行建構(parralel build)以充份利用多CPU／CPU核心系統資源
+export CONCURRENCY_LEVEL=2
+或是
+--jobs 「總CPU核心數（網路上另一個需額外+1的說法似乎會有反效果）」
+
+#####範例#####
+make-kpkg --revision=3.4.4 --append-to-version=-generic-vdragon-mod --jobs 8 kernel_image kernel_headers
+
+make-kpkg --revision=3.3.3 --append-to-version=-intelcore2optimized-vdragon-mod --jobs 8 kernel_image kernel_headers
