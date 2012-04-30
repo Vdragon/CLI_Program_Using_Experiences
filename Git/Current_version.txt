@@ -288,13 +288,13 @@ git clean --force
 git clean --force --dry-run
 
 ##包括沒有納入版本控制的目錄
-git clean --force -d
+git clean --force -d --dry-run
 
 ##包括內含repo的目錄
-git clean  --force -d --force
+git clean  --force -d --force --dry-run 
 
 ##只移除在ignore規則中的檔案
-git clean --force -X
+git clean --force -X --dry-run
 
 ##git revert相關命令
 #回退某個commit

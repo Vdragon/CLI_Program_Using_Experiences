@@ -1,2 +1,7 @@
-//檢查 memory leak
-valgrind --tool=memcheck --leak-check=yes 『程式名稱（需加上Debug Symbol）』
+﻿####Valgrind####
+
+##檢查 memory leak
+valgrind --tool=memcheck --leak-check=yes 「程式名稱（需於編譯時加上Debugging Symbol且（最好）無最佳化）」 「傳入程式的參數」
+
+##更詳細的檢查未初始化的變數
+valgrind --tool=memcheck --track-origins=yes 「程式名稱（需於編譯時加上Debugging Symbol且（最好）無最佳化）」 「傳入程式的參數」
