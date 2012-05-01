@@ -9,12 +9,16 @@ kernel-package
 fakeroot
 
 ##基本使用方法
-#不登入於管理員權限帳號(or root)的編譯方式
+1.切換工作目錄(working directory)到Linux作業系統核心的根目錄（底下有arch等目錄的那個）
+cd /directory/to/kernel/root/
+
+2.1不登入於具管理員權限(root)帳號的建構方式
 make-kpkg --rootcmd=fakeroot --revision=『套件版本』 --append-to-version=『直接後綴於套件版本後的字串』 kernel_image kernel_headers
 
-#登入於管理員權限帳號(or root)的編譯方式
-make-kpkg --revision=『套件版本』 --append-to-version=『直接後綴於套件版本後的字串（僅能包括小寫英數字）』 kernel_image kernel_headers
+2.2登入於具管理員權限(root)帳號的建構方式
+make-kpkg --revision=『套件版本』 --revision=『套件版本』 --append-to-version=『直接後綴於套件版本後的字串（僅能包括小寫英數字）』 kernel_image kernel_headers
 
+##其他參數
 #新增環境變數(environment variable)讓make進行平行建構(parralel build)以充份利用多CPU／CPU核心系統資源
 export CONCURRENCY_LEVEL=2
 或是新增選項參數
