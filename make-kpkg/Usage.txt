@@ -1,6 +1,12 @@
-﻿####make-kpkg：將linux原始程式碼build並打包成Debian套件的工具
+﻿####make-kpkg：將linux原始程式碼build並打包成Debian軟體包裹／套件的工具
 ##語法：
   make-kpkg [options] [target [target ...]]
+
+##依賴軟體包裹##
+#用於全部#
+kernel-package
+#用於fakeroot方式建構Linux核心#
+fakeroot
 
 ##基本使用方法
 #不登入於管理員權限帳號(or root)的編譯方式
