@@ -17,7 +17,7 @@ export CONCURRENCY_LEVEL=2
 或是
 --jobs 「總CPU核心數（網路上另一個需額外+1的說法似乎會有反效果）」
 
-#####範例#####
+#####使用歷史#####
 make-kpkg --revision=3.4.4 --append-to-version=-generic-vdragon-mod --jobs 8 kernel_image kernel_headers
 
 make-kpkg --revision=3.3.3 --append-to-version=-intelcore2optimized-vdragon-mod --jobs 8 kernel_image kernel_headers
