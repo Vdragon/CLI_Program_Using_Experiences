@@ -9,7 +9,7 @@ kernel-package
 fakeroot
 
 ##基本使用方法
-1.切換工作目錄(working directory)到Linux作業系統核心的根目錄（底下有arch等目錄的那個）
+1.切換工作目錄(working directory)到Linux作業系統核心的根目錄（底下有arch、block、crypto等目錄的那個）
 cd /directory/to/kernel/root/
 
 2.1不登入於具管理員權限(root)帳號的建構方式
@@ -36,3 +36,4 @@ make-kpkg --revision=3.3.3 --append-to-version=-intelcore2optimized-vdragon-mod 
 
 make-kpkg --rootcmd=fakeroot --initrd --append-to-version=-generic-vdragon-mod --jobs 8 kernel_image kernel_headers
 
+make-kpkg --rootcmd=fakeroot --revision=3.3.4 --initrd --append-to-version=-amdk8optimized-vdragon-mod --jobs 8 kernel_image kernel_headers
