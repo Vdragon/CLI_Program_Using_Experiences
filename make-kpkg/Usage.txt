@@ -37,3 +37,5 @@ make-kpkg --revision=3.3.3 --append-to-version=-intelcore2optimized-vdragon-mod 
 make-kpkg --rootcmd=fakeroot --initrd --append-to-version=-generic-vdragon-mod --jobs 8 kernel_image kernel_headers
 
 make-kpkg --rootcmd=fakeroot --revision=3.3.4 --initrd --append-to-version=-amdk8optimized-vdragon-mod --jobs 8 kernel_image kernel_headers
+
+make-kpkg --rootcmd=fakeroot --revision=3.3.4 --initrd --append-to-version=-generic-vdragon-mod --jobs 8 kernel_image kernel_headers
