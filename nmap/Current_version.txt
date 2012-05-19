@@ -5,3 +5,9 @@ nmap -A [target]
 
 ##IP Protocol Scan
 nmap -sO [target]
+
+#scan specified port 
+nmap -p 「連接埠的範圍如12340-12345」
+
+#使用歷史
+nmap -p 12340-12349
