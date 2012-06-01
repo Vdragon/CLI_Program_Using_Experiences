@@ -27,7 +27,7 @@ export CONCURRENCY_LEVEL=2
 #跟initrd有關的選項參數
 --initrd
 
-#####使用歷史（愈下面表示愈新）#####
+#####使用歷史（愈下面表示愈新以及愈正確）#####
 make-kpkg --revision=3.3.2 --append-to-version=-generic-Vdragon-mod kernel_image kernel_headers
 
 make-kpkg --revision=3.4.4 --append-to-version=-generic-vdragon-mod --jobs 8 kernel_image kernel_headers
@@ -55,3 +55,7 @@ make-kpkg --rootcmd=fakeroot --revision=3.3.7+01 --initrd --append-to-version=-a
 make-kpkg --rootcmd=fakeroot --revision=3.3.7+02 --initrd --append-to-version=-intelcore2optimizedwithuksmpatch-vdragon-mod --jobs 4 kernel_image kernel_headers
 
 make-kpkg --rootcmd=fakeroot --revision=3.3.7+02 --initrd --append-to-version=-genericwithuksmpatch-vdragon-mod --jobs 4 kernel_image kernel_headers
+
+make-kpkg --rootcmd=fakeroot --revision=3.3.7+02 --initrd --append-to-version=-amdk8optimizedwithuksmpatch-vdragon-mod --jobs 4 kernel_image kernel_headers
+
+make-kpkg --initrd --rootcmd=fakeroot --revision=3.3.7+03 --append-to-version=-generic-vdragon-mod --jobs 4 kernel_image kernel_headers
