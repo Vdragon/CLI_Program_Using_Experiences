@@ -1,0 +1,18 @@
+NAME
+       ln - make links between files
+
+SYNOPSIS
+       ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)
+       ln [OPTION]... TARGET                  (2nd form)
+       ln [OPTION]... TARGET... DIRECTORY     (3rd form)
+       ln [OPTION]... -t DIRECTORY TARGET...  (4th form)
+
+選項 | Options
+--symbolic
+  建立symbolic link而非hard links
+
+--force
+  移除已存在之同名檔案
+
+使用歷史 | Use history
+  ln --symbolic --force
