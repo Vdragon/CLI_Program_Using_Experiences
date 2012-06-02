@@ -23,6 +23,7 @@ make-kpkg --revision=『套件版本』 --append-to-version=『直接後綴於�
 export CONCURRENCY_LEVEL=2
 或是新增選項參數
 --jobs 「總CPU核心數（網路上另一個需額外+1的說法似乎會有反效果）」
+--jobs `getconf _NPROCESSORS_ONLN`
 
 #跟initrd有關的選項參數
 --initrd
