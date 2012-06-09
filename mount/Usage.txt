@@ -1,0 +1,11 @@
+mount -- 掛載檔案系統
+#####語法#####
+mount
+mount -t 「檔案系統類型」 -o 「掛載選項」 「裝置檔案」 「掛載點」
+
+
+####用於FAT檔案系統####
+##台灣地區（使用BIG5編碼）##
+mount -t vfat -o rw,utf8,umask=117,gid=46,showexec,errors=remount-ro
+
+s
