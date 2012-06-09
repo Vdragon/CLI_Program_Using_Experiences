@@ -1,0 +1,25 @@
+NAME
+       od - dump files in octal and other formats
+
+SYNOPSIS
+       od [OPTION]... [FILE]...
+       od [-abcdfilosx]... [FILE] [[+]OFFSET[.][b]]
+       od --traditional [OPTION]... [FILE] [[+]OFFSET[.][b] [+][LABEL][.][b]]
+
+DESCRIPTION
+       Write  an  unambiguous  representation,  octal bytes by default, of FILE to
+       standard output.  With more than one FILE argument, concatenate them in the
+       listed  order  to  form  the  input.  With no FILE, or when FILE is -, read
+       standard input.
+
+基本用法
+#16進位表示法，每1byte做區隔
+od --format=x1 「檔案名稱」
+#ASCII符號
+od --format=c 「檔案名稱」
+#ASCII符號（忽視最高位元）
+od --format=c 「檔案名稱」
+
+使用紀錄
+od --format=x1 SSD_MBR.bin
+od --format=a SSD_MBR.bin
