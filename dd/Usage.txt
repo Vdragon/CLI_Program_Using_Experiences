@@ -1,0 +1,16 @@
+NAME
+       dd - convert and copy a file
+
+SYNOPSIS
+       dd [OPERAND]...
+       dd OPTION
+
+DESCRIPTION
+       Copy a file, converting and formatting according to the operands.
+
+##使用方式
+dd if=「輸入檔案路徑」 of=「輸出檔案路徑」 bs=「指定一個block的大小（單位：byte）」 count=「複製的block數」
+
+##使用紀錄
+#備份Master Boot Record
+dd if=/dev/sda of=/media/FILES/Backup/Linux_backup/開機磁區/SSD_MBR.bin bs=512 count=1
