@@ -1,0 +1,30 @@
+NAME
+     tar — The GNU version of the tar archiving utility
+
+SYNOPSIS
+     tar [-] A --catenate --concatenate | c --create | d --diff --compare | --delete | r --append | t
+         --list | --test-label | u --update | x --extract --get [options] [pathname ...]
+
+##使用方式
+#建立tar封裝檔案（以「封裝檔案名稱」自動決定封裝方式，如.bz2、.gz）
+tar  --verbose --auto-compress --create --file 「封裝檔案名稱」 「欲封裝檔案來源」
+#解封裝tar封裝檔案（以「封裝檔案名稱」自動決定封裝方式）
+tar  --verbose --auto-compress --create --file 「封裝檔案名稱」 --directory 「欲解封裝保存目錄」
+
+#建立無壓縮tar封裝檔案
+tar --verbose --create --file 「封裝檔案名稱」 「欲封裝檔案來源」
+#解封裝無壓縮tar封裝檔案
+tar --verbose --extract --file 「封裝檔案名稱」 --directory 「欲解封裝保存目錄」
+
+#建立gzip壓縮tar封裝檔案
+tar --verbose --gzip --create --file 「封裝檔案名稱」 「封裝資料來源」
+#解封裝gzip壓縮tar封裝檔案
+tar --verbose --gzip --extract --file 「封裝檔案名稱」 --directory 「欲解封裝保存目錄」
+
+#bzip壓縮演算法封裝tar封裝檔案
+tar --verbose --bzip2 --create --file 「封裝檔案名稱」 「封裝資料來源」
+#解封裝gzip壓縮tar封裝檔案
+tar --verbose --gzip2 --extract --file 「封裝檔案名稱」 --directory 「欲解封裝保存目錄」
+
+##使用紀錄
+tar  --verbose --auto-compress --create --file /media/FILES/PRIVATE/Programming_20120611.tar.gz /home/Vdragon/Dropbox/Workspace/Programming

@@ -1,0 +1,3 @@
+####make####
+#新增環境變數(environment variable)讓make進行平行建構(parralel build)以充份利用多CPU／CPU核心系統資源
+export CONCURRENCY_LEVEL=8
