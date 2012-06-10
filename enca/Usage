@@ -1,0 +1,11 @@
+NAME
+       enca -- detect and convert encoding of text files
+
+SYNOPSIS
+       enca [-L LANGUAGE] [OPTION]... [FILE]...
+       enconv [-L LANGUAGE] [OPTION]... [FILE]...
+##基本用法
+#猜測字元編碼
+enca --language=zh --guess --details 「檔案」
+#配合iconv使用
+iconv --verbose --from-code `enca --language=zh --guess --iconv-name` --to-code UTF8 --output 「轉換輸出檔案」「欲轉換檔案」
