@@ -1,0 +1,7 @@
+cat
+
+參數選項
+--show-nonprinting
+  顯示不會印出來的字元（不包含空白字元）
+--show-ends
+  顯示行結尾
