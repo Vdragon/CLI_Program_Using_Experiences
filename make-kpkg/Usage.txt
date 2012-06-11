@@ -9,6 +9,8 @@ kernel-package
 fakeroot
 
 ##基本使用方法
+0.複製/etc/kern-pkg.conf到家目錄中為.kern-pkg.conf並修改名稱及電子郵件地址
+
 1.切換工作目錄(working directory)到Linux作業系統核心的根目錄（底下有arch、block、crypto等目錄的那個）
 cd /directory/to/kernel/root/
 
@@ -62,3 +64,5 @@ make-kpkg --rootcmd=fakeroot --revision=3.3.7+02 --initrd --append-to-version=-g
 make-kpkg --rootcmd=fakeroot --revision=3.3.7+02 --initrd --append-to-version=-amdk8optimizedwithuksmpatch-vdragon-mod --jobs 4 kernel_image kernel_headers
 
 make-kpkg --initrd --rootcmd=fakeroot --jobs 4 --revision=3.3.7+03 --append-to-version=-generic-vdragon-mod kernel_image kernel_headers
+
+make-kpkg --initrd --rootcmd=fakeroot --jobs 6 --revision=3.4.2+05 --append-to-version=-intelcore2optimized-uksm-ck-bfq-patched-vdragon-mod kernel_headers kernel_image
