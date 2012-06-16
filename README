@@ -1,4 +1,4 @@
-一些命令列程式的使用經驗 | CLI-Program-Using-Experiences
+命令列程式的使用經驗 | CLI-Program-Using-Experiences
 
 =====智慧財產授權條款開始=====
 授權條款版本：1.01(1)201101020309
@@ -13,4 +13,18 @@
       4.如果您需要使用本作品於授權條款所限制的範圍，歡迎來信(pika1021@gmail.com)洽詢。
 =====智慧財產授權條款結束=====
 
-全形字元（包括但不限於「「」」、「（）」等全形字元）包含的文字為需要視情況替換的項目。
+常見問題與解答 | Frequently Asked Questions And Answers
+	全形字元解讀方法
+		全形字元（包括但不限於「「」」、「（）」等全形字元）包含的文字為需要視情況替換的項目。
+		「（）」包含的文字代表於某些情形下可省略
+	子目錄檔案名稱說明
+		Usage.txt
+			程式的使用方式
+		Format.txt
+			命令的格式
+		Commandline_auguments_&_options.txt
+			命令列的參數與選項
+		Use_history.txt
+			執行命令的使用紀錄（可能包含不正確使用的紀錄）
+		Attention.txt
+			注意事項
