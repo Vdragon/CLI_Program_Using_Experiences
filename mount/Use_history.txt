@@ -1,0 +1,22 @@
+使用紀錄 | Use history
+	mount -t vfat -o rw,utf8,umask=117,gid=46,showexec,errors=remount-ro
+		-t vfat
+			檔案系統類型為FAT檔案系統
+		-o
+			rw
+				可讀可寫模式
+			umask=117
+				由於FAT檔案系統不支援UNIX的權限設定
+				故鎖定目錄770權限，給檔案660權限(?)
+			gid=46
+				鎖定檔案與目錄的群組ID為46（適用於抽取式裝置plugdev群組，使在plugdev群組的使用者可以存取）
+			showexec
+				使副檔名為com、exe等Windows平台可執行檔副檔名的檔案有可執行權限
+			errors=
+				當發生讀取／寫入錯誤時所採取的措施
+					remount-ro
+						以唯讀模式重新掛載
+
+	mount -t ext4 -o rw,errors=remount-ro
+		-t ext4
+			檔案系統類型為EXT4檔案系統

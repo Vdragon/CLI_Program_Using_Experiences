@@ -1,0 +1,5 @@
+命令列參數與選項 | Commandline auguments & options
+	-t
+		(type)欲掛載之磁碟分割區之檔案系統類型
+	-o
+		掛載選項
