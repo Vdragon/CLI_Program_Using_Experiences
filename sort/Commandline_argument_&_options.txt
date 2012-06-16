@@ -1,0 +1,29 @@
+命令列參數與選項 | Commandline auguments & options
+-b, --ignore-leading-blanks
+	ignore leading blanks
+
+-d, --dictionary-order
+	consider only blanks and alphanumeric characters
+
+-f, --ignore-case
+	fold lower case to upper case characters
+
+-i, --ignore-nonprinting
+	consider only printable characters
+
+-r, --reverse
+	reverse the result of comparisons
+
+-o, --output=FILE
+	write result to FILE instead of standard output
+
+-u, --unique
+	without -c, output only the first of an equal run
+
+-t, --field-separator=SEP
+	以SEP代替非空白字元當作分隔符號
+	use SEP instead of non-blank to blank transition
+
+-k, --key=POS1[,POS2]
+	用來排序的欄位
+	start a key at POS1 (origin 1), end it at POS2 (default end of line). See POS syntax below

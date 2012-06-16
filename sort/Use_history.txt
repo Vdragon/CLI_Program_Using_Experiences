@@ -1,0 +1,9 @@
+使用紀錄 | Use history
+排序/etc/passwd的內容
+	cat /etc/passwd | sort
+
+以「:」為分隔字元，以第3個欄位當作 key 排序/etc/passwd的內容
+	cat /etc/passwd | sort -t ':' -k 3
+
+利用 last ，將輸出的資料僅取帳號，並加以排序
+	last | cut -d ' ' -f 1 | sort
