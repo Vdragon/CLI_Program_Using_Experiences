@@ -1,5 +1,4 @@
-#.gitignore範本
-
+﻿##.gitignore範本
 ##.gitignore用途
 #   避免git將不想add至staging area的檔案add到staging area中。
 ##.gitignore語法
@@ -11,29 +10,263 @@
 #  /FILE←只不track根目錄的FILE檔案
 #  build/←忽略build目錄下的所有檔案
 #  doc/*.txt←doc/a.txt會被忽略但是doc/a/b.txt則不會被忽略（那怎樣才能忽略呢？）
+##我自己的設定##
+#Eclipse CDT會將可執行檔跟object檔案放在configuration同名的資料夾，加入我自己慣用的名稱設定
+Debug*/
+Release*/
 
-##Linux隱藏檔
+#Resources目錄底下的東西不想被排除
+!Resources/
+
+#我慣用的備份檔副檔名
+*.backup
+*.bak
+
+##Linux通用設定##
 .*
 !.gitignore
 
-##文字編輯軟體備份檔
-#通用備份檔副檔名
-*~
+#KDE的資料夾設定
+.directory
+
+##Windows通用設定##
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+##文字編輯軟體備份檔##
+#包含「~」字元的通用備份檔副檔名
+*.*~*
 
 #Kate的備份檔
 *.kate-swp
 
-##編譯時產生的檔案
-#Compiled Object files
-#*.slo
-#*.lo
+##Object Code...
 *.o
 *.obj
 
-# Compiled Dynamic libraries
-*.so
+##可執行檔
+*.exe
+*.executable
 
-# Compiled Static libraries
-#*.lai
-#*.la
-*.a
+##由程式產生的資料檔案
+*.dat
+
+##封存／壓縮檔
+*.7z
+*.zip
+*.tar
+
+##圖片檔案
+*.jpg
+*.png
+*.jpeg
+*.gif
+
+##Code::Blocks專屬設定
+*.layout
+*.depend
+*.cbTemp
+
+## Visual Studio專屬設定
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.vspscc
+.builds
+BuildLog.htm
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+
+# Visual Studio profiler
+*.psess
+*.vsp
+
+# ReSharper is a .NET coding add-in
+_ReSharper*
+
+# Installshield output folder
+[Ee]xpress
+
+# DocProject is a documentation generator add-in
+DocProject/buildhelp/
+DocProject/Help/*.HxT
+DocProject/Help/*.HxC
+DocProject/Help/*.hhc
+DocProject/Help/*.hhk
+DocProject/Help/*.hhp
+DocProject/Help/Html2
+DocProject/Help/html
+
+# Click-Once directory
+publish
+
+# Others
+[Bb]in
+[Oo]bj
+sql
+TestResults
+*.Cache
+ClientBin
+stylecop.*
+~$*
+*.dbmdl
+Generated_Code #added for RIA/Silverlight projects
+
+# Backup & report files from converting an old project file to a newer
+# Visual Studio version. Backup files are not needed, because we have git ;-)
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.XML
+
+*.dep
+*.idb
+
+#Visual Studio 2010
+*.old
+*.vcxproj.filters
+
+##Eclipse專屬設定
+*.pydevproject
+
+#Eclipse的專案檔案，我不想排除它
+!.project
+
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+*.d
+*.mk
+
+#CDT的專案檔案，我不想排除它
+!.cproject
+
+# PDT-specific
+.buildpath
+
+##HDL產生的檔案##
+#模擬用的程式
+Simulation/
+#模擬出來的波形檔
+*.vcd
+
+#Xilinx ISE
+_xmsgs/
+_ngo/
+iseconfig/
+isim/
+*_xdb/
+xst/
+isim.tmp_save/
+planAhead*/
+
+*.restore
+*.ise_ISE_Backup
+*_summary.html
+*.map
+*.mrp
+*.ngr
+*.ngd
+*.ngc
+*.bld
+*.cmd_log
+*.lso
+*.ntrc_log
+*.stx
+*.syr
+*.xst
+*.xrpt
+*.wdb
+*_envsettings.html
+*.xwv*
+*.jhd
+*.ant
+*.wcfg
+*.ise_.lock
+*.bgn
+*.bit
+*.drc
+*.lfp
+*.ncd
+*.pad
+*.par
+*.pcf
+*.twr
+*.twx
+*.ucf
+*.unroutes
+*.ut
+*.xpi
+*_guide.ncd
+*_map.ncd
+*_map.ngm
+*_pad.csv
+*_pad.txt
+*_summary.xml
+*_usage.xml
+*.gise
+*.prj
+*.ptwx
+*_bitgen.xwbt
+*.tcl
+*.log
+*.xmsgs
+*.cmd
+
+usage_statistics_webtalk.html
+device_usage_statistics.html
+isim.hdlsourcefiles
+webtalk_pn.xml
+xilinxsim.ini
+planAhead.jou
+
+
+##bomstrip備份檔案
+*.bom
+
+##DevC++整合式開發環境
+Makefile.win
