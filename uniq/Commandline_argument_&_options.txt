@@ -1,0 +1,9 @@
+命令列參數與選項 | Commandline auguments & options
+-c, --count
+	prefix lines by the number of occurrences
+
+-d, --repeated
+	only print duplicate lines
+
+-i, --ignore-case
+	ignore differences in case when comparing

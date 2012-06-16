@@ -1,0 +1,12 @@
+使用紀錄 | Use history
+範例一：使用 last 將帳號列出，僅取出帳號欄，進行排序後僅取出一位；
+[root@www ~]# last | cut -d ' ' -f1 | sort | uniq
+
+範例二：承上題，如果我還想要知道每個人的登入總次數呢？
+[root@www ~]# last | cut -d ' ' -f1 | sort | uniq -c
+      1
+     12 reboot
+     41 root
+      1 wtmp
+# 從上面的結果可以發現 reboot 有 12 次， root 登入則有 41 次！
+# wtmp 與第一行的空白都是 last 的預設字元，那兩個可以忽略的！
