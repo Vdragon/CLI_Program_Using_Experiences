@@ -1,0 +1,37 @@
+NAME
+ sudo, sudoedit - execute a command as another user 
+SYNOPSIS
+sudo [-D level] -h | -K | -k | -V 
+
+ sudo -v [-AknS] [-D level] [-g group name|#gid] [-p prompt] [-u user name|#uid] 
+
+ sudo -l[l] [-AknS] [-D level] [-g group name|#gid] [-p prompt] [-U user name] [-u user name|#uid] [command] 
+
+ sudo [-AbEHnPS] [-C fd] [-D level] [-g group name|#gid] [-p prompt] [-u user name|#uid] [VAR=value] [-i | -s] [command] 
+
+ sudoedit [-AnS] [-C fd] [-D level] [-g group name|#gid] [-p prompt] [-u user name|#uid] file ...
+
+命令參數
+-i （要以superuser權限執行的命令）
+	以目標使用者身份執行該使用者帳號指定的shell並在其中執行命令
+	於此情況該使用者的shell設定會被讀取
+-p 「提示使用者輸入密碼的文字」
+	以「提示使用者輸入密碼的文字」取代sudo預設的提示文字
+	跳脫字元為「%」，部份可以使用的跳脫序列如下
+		%h - 不包含域名的主機名稱
+		%p - 要輸入的密碼對應的使用者帳號名稱
+		%u - 執行sudo的使用者帳號名稱
+		%% - 「%」字元
+-S	讓sudo從stdin讀取最後面接有「\n」的密碼
+-g 「執行命令的群組名稱（預設為該使用者的主要群組）
+-u 「執行命令的使用者帳號名稱（預設為root）
+
+使用方式
+sudo 「要以superuser權限執行的命令」
+sudo -p 「提示使用者輸入密碼的文字」 「要以superuser權限執行的命令」
+sudo 
+
+使用紀錄
+sudo -i apt-get update
+sudo -i -p "請輸入%p的密碼：" echo -e "成功取得超級使用者(superuser, root)權限。"
+sudo -i 
