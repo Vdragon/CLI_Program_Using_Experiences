@@ -27,8 +27,12 @@ tar --verbose --bzip2 --create --file 「封裝檔案名稱」 「封裝資料�
 tar --verbose --gzip2 --extract --file 「封裝檔案名稱」 --directory 「解封裝檔案欲保存目錄」 （「預解封裝檔案路徑」）
 
 ##其他參數
-#保留檔案及目錄資訊
+#保留檔案及目錄資訊（屬性等）(obseluted)
 --preserve
+-p --preserve-permissions --same-permissions
+	保留原來的屬性
+-s --preserve-order --sameorder
+
 #使用絕對路徑封裝檔案
 --absolute-names
 #列出封裝檔中的內容
@@ -41,7 +45,11 @@ tar --verbose --gzip2 --extract --file 「封裝檔案名稱」 --directory 「�
 --one-file-system
 #僅封裝比「日期」還要新的檔案及目錄
 --never-mtime=「日期」
+#
+--interactive
 
 ##使用紀錄
 tar --verbose --auto-compress --create --file /media/FILES/PRIVATE/Programming_20120611.tar.gz /home/Vdragon/Dropbox/Workspace/Programming
 tar --list | grep main.c
+
+tar --verbose --one-file-system --auto-compress --create --preserve-permissions --file /media/FILES/Backup/Wine/20120613_osu_NotepadPP_unclean/archive.tar.gz .wine/
