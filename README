@@ -49,7 +49,7 @@
 		Attention.txt
 			注意事項
 
-※mount的使用手冊完整內容如下（ubuntu 12.04LTS中的版本）
+※mount的使用手冊完整內容如下（ubuntu 12.04LTS中的版本）（事實上mount的使用手冊只有2000多行，不過字數絕對會讓您覺得有幾萬行那麼多（笑））
 MOUNT(8)                      System Administration                      MOUNT(8)
 
 
