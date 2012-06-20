@@ -1,0 +1,6 @@
+使用紀錄 | Use history
+usermod --groups adm --append "$SUDO_USER"
+	--groups adm
+		設定新的adm群組的使用者列表(?)
+	--append
+		變更--groups行為，改為將使用者新增至已有的列表中
