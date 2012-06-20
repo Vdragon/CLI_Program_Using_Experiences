@@ -1,4 +1,4 @@
 ##命令名稱：apt-key
 
 ##歷史命令：
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 11687D67
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys AF1CDFA9
