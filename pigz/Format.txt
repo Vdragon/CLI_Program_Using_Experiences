@@ -1,2 +1,5 @@
 格式 | Format
-
+	from man pigz
+		pigz [options] files...
+	繼承部份gzip程式的命令列參數
+	

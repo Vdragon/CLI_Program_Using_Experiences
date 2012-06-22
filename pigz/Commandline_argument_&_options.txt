@@ -1,1 +1,5 @@
 命令列參數與選項 | Commandline auguments & options
+	-「數字」 --fast --best
+		指定壓縮程度，0(--fast)最低9(--best)最高
+	> 「壓縮封存檔案名稱」
+		保存的檔案名稱，無此選項表示輸出至標準輸出(stdout)
