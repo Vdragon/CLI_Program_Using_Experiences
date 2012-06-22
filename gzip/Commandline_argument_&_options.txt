@@ -1,0 +1,16 @@
+命令列參數與選項 | Commandline auguments & options
+	-d --decompress --uncompress
+		解壓縮
+	-l --list
+		顯示被壓縮檔案的資訊
+	-r --recursive
+		Travel the directory structure recursively.  If  any  of  the
+		file  names  specified  on  the command line are directories,
+		gzip will descend into the directory  and  compress  all  the
+		files  it finds there (or decompress them in the case of gun‐
+		zip ).
+	-v --verbose
+		Verbose.  Display  the name and percentage reduction for each
+		file compressed or decompressed.
+	-「數字」
+		指定壓縮演算法，愈高表示壓縮效果越好但越慢，預設為6。

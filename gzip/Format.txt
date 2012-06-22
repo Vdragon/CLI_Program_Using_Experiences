@@ -1,0 +1,5 @@
+格式 | Format
+	from "man gzip"
+		gzip [ -acdfhlLnNrtvV19 ] [-S suffix] [ name ...  ]
+		gunzip [ -acfhlLnNrtvV ] [-S suffix] [ name ...  ]
+		zcat [ -fhLV ] [ name ...  ]
