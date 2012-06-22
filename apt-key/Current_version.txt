@@ -1,4 +1,10 @@
 ##命令名稱：apt-key
 
 ##歷史命令：
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys AF1CDFA9
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys AF1CDFA9 
+
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6A68F637 1378B444 EAE0D85C A1F196A8 F9CB8DB0 1236960C 801DF724 60D8DA0B
+	--keyserver
+		指定下載公鑰的伺服器keyserver.ubuntu.com
+	--recv-keys
+		要獲取的公鑰，以空白分隔可批次下載多個公鑰
