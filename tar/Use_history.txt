@@ -7,3 +7,18 @@
 	tar --verbose --one-file-system --auto-compress --create --preserve-permissions --file /media/FILES/Backup/Wine/20120613_osu_NotepadPP_unclean/archive.tar.gz .wine/
 	
 	tar --verbose --auto-compress --create --file "linux_3.4.3_apparmor_patched.tar.gz" linux-3.4.3/ 
+
+	封裝目錄並重新導向給pigz進行多thread壓縮
+		tar --create "linux-3.4.3/" | pigz --best > "linux-3.4.3_patched_pigz.tar.gz"
+			--create
+				建立封存檔模式
+			沒有--file選項
+				輸出到標準輸出(stdout)
+			"linux-3.4.3/"
+				欲封存檔案來源
+			| pigz
+				重新導向標準輸出(stdout)到pigz
+			--best
+				使用最佳壓縮壓縮演算法
+			> "linux-3.4.3_patched_pigz.tar.gz"
+				將pigz輸出至標準輸出(stdout)的資料重新導向到「linux-3.4.3_patched_pigz.tar.gz」檔案
