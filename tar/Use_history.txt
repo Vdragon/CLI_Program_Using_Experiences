@@ -1,0 +1,9 @@
+使用紀錄 | Use history
+	tar --verbose --auto-compress --create --file /media/FILES/PRIVATE/Programming_20120611.tar.gz /home/Vdragon/Dropbox/Workspace/Programming
+	重新導向封存檔中的檔案列表到grep，搜尋包含「main.c」的檔案名稱的檔案
+		tar --list | grep main.c
+			--list
+				印出封存檔中的檔案列表
+	tar --verbose --one-file-system --auto-compress --create --preserve-permissions --file /media/FILES/Backup/Wine/20120613_osu_NotepadPP_unclean/archive.tar.gz .wine/
+	
+	tar --verbose --auto-compress --create --file "linux_3.4.3_apparmor_patched.tar.gz" linux-3.4.3/ 
