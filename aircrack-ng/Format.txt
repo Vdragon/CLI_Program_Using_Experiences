@@ -1,0 +1,11 @@
+命令列格式 | Commandline Format
+	airmon-ng
+		airmon-ng start 「裝置檔案 | Device File」 （監聽頻道）
+		airmon-ng stop 「裝置檔案 | Device File」
+		airmon-ng check （kill）
+	airodump-ng
+		airodump-ng [options] 「裝置檔案 | Device File」
+	aireplay-ng
+
+			-e 「目標Access Point的ESSID」
+			-a 「目標Access Point的BSSID」

