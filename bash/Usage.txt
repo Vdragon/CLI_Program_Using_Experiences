@@ -1,0 +1,2 @@
+用途 | Usage
+  bash為 bash script程式的intepreter的殼程式(shell)

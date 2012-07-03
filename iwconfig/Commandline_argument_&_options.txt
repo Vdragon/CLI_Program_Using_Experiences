@@ -1,0 +1,5 @@
+命令列參數與選項 | Commandline auguments & options
+	rate
+		設定無線網路介面的頻寬
+	channel
+		設定無線網路介面的頻道

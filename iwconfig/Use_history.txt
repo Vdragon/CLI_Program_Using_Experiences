@@ -1,0 +1,5 @@
+使用紀錄 | Use history
+	設定無線網路介面wlan0的頻寬為1MB/s
+		iwconfig wlan0 rate 1MB
+	設定無線網路介面wlan0的頻道為11
+		iwconfig wlan0 channel 11
