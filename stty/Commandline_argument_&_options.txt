@@ -1,0 +1,5 @@
+命令列參數與選項 | Commandline auguments & options
+	無參數
+		印出部份設定值
+	--all -a
+		列出所有的設定值
