@@ -1,0 +1,27 @@
+命令列參數與選項 | Commandline auguments & options
+	無參數
+		列出目前工作目錄(Current Working Directory)底下的檔案與目錄
+		-1
+			每列列出一個檔案
+	--all
+		亦顯示隱藏檔案與目錄
+	--almost-all
+		同--all，但不顯示當前目錄(.)跟上一層目錄(..)
+	-l
+		使用列表的格式印出
+		--human-readable -h
+			以人類易讀的格式印出檔案大小（如1K 23M 4G）
+	--directory -d
+		僅印出目錄
+	-i --inode
+		印出檔案的inode號碼
+	-r --reverse
+		反向印出檔案順序
+	-R --recursive
+		亦列出子目錄下的檔案與目錄
+	-s --size
+		印出於磁碟下分配給此檔案的block數
+	-S
+		以檔案大小排序
+	-t
+		以修改時間排序
