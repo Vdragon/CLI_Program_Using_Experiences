@@ -1,2 +1,6 @@
 命令列格式 | Commandline Format
-
+	使用手冊中的版本
+		stty [-F DEVICE | --file=DEVICE] [SETTING]...
+		stty [-F DEVICE | --file=DEVICE] [-a|--all]
+		stty [-F DEVICE | --file=DEVICE] [-g|--save]
+	stty 「設定名稱」 「設定值」
