@@ -1,1 +1,11 @@
 命令列參數與選項 | Commandline auguments & options
+	無參數
+		印出開頭10列的資料
+	-c, --bytes=[-]K
+		印出開頭K個位元的資料
+		K可以加上後綴kB, K, MB, M等
+	-n, --lines=[-]K
+		印出開頭K列的資料
+		K可以加上後綴kB, K, MB, M等
+	-q, --quiet, --silent
+		不印出檔案名稱

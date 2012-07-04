@@ -1,1 +1,7 @@
 使用紀錄 | Use history
+	印出開頭5列的/etc/apt/source.list
+		# deb cdrom:[Ubuntu 12.04 LTS _Precise Pangolin_ - Release i386 (20120423)]/ precise main restricted
+
+		# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+		# newer versions of the distribution.
+		deb http://free.nchc.org.tw/ubuntu/ precise main restricted
