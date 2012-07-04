@@ -1,1 +1,3 @@
 用途 | Usage
+	將特定欄位相符的兩個檔案的列合併為一列
+	merge lines of files
