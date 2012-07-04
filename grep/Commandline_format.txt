@@ -1,0 +1,4 @@
+命令列格式 | Commandline Format
+	grep使用手冊中的版本
+		grep [OPTIONS] PATTERN [FILE...]
+		grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]

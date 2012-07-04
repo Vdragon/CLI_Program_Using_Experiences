@@ -1,0 +1,24 @@
+命令列參數與選項 | Commandline auguments & options
+  --ignore-case
+		忽略大小寫
+
+	-G, - -basic-regexp
+		將 PATTERN 視為基本版本的正規表達式
+
+	-E, - -extended-regexp
+		將 PATTERN 視為延伸版本的正規表達式
+
+	-c, - -count
+		印出符合的行數
+
+	--color=auto
+		將關鍵字套用顏色
+
+	-n, - -line-number
+		輸出行號
+
+	-f FILE, - -file=FILE
+		將 FILE 當作輸入來源
+
+	-v, - -invert-match
+		反轉搜尋結果
