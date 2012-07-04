@@ -1,1 +1,3 @@
 用途 | Usage
+	重導向的同時仍輸出到標準輸出(Standard Output)
+	read from standard input and write to standard output and files

@@ -1,2 +1,4 @@
 格式 | Format
+	man tee
+		tee [OPTION]... [FILE]...
 
