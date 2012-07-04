@@ -1,0 +1,5 @@
+命令列參數與選項 | Commandline auguments & options
+	無參數
+		切換至HOME變數的目錄（通常是使用者的家目錄）
+	-
+		切換至OLDPWD變數的目錄（前一個工作目錄）

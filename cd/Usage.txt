@@ -1,0 +1,3 @@
+用途 | Usage
+	切換當前工作目錄的命令
+	cd應該為change (working) directory的縮寫
