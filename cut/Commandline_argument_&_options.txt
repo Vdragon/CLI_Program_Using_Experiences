@@ -1,0 +1,13 @@
+命令列參數與選項 | Commandline auguments & options
+	-b, --bytes=LIST
+		select only these bytes
+	-c, --characters=LIST
+		select only these characters
+	-d, --delimiter=DELIM
+		use DELIM instead of TAB for field delimiter
+	-f, --fields=LIST
+		select only these fields; also print any line that contains no delimiter character, unless the -s option is specified
+	--complement
+		complement the set of selected bytes, characters or fields
+	--output-delimiter=STRING
+		use STRING as the output delimiter the default is to use the input delimiter

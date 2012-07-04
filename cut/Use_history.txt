@@ -1,0 +1,11 @@
+使用紀錄 | Use history
+	echo $PATH
+		/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+	echo $PATH | cut --delimiter=':' --fields=3
+		/usr/local/bin
+	echo $PATH | cut --delimiter ':' --fields 5
+		/usr/bin
+	echo $PATH | cut --delimiter=':' --fields=2-7
+		/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+	echo $PATH | cut --delimiter=':' --fields=3,5
+		/usr/local/bin:/usr/bin
