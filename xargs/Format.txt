@@ -1,2 +1,9 @@
 格式 | Format
-
+	man xargs
+		xargs  [-0prtx]  [-E eof-str] [-e[eof-str]] [--eof[=eof-str]] [--null] [-d
+		delimiter]  [--delimiter  delimiter]  [-I  replace-str]  [-i[replace-str]]
+		[--replace[=replace-str]]       [-l[max-lines]]       [-L       max-lines]
+		[--max-lines[=max-lines]] [-n  max-args]  [--max-args=max-args]  [-s  max-
+		chars]   [--max-chars=max-chars]  [-P  max-procs]  [--max-procs=max-procs]
+		[--interactive] [--verbose] [--exit] [--no-run-if-empty] [--arg-file=file]
+		[--show-limits] [--version] [--help] [command [initial-arguments]]

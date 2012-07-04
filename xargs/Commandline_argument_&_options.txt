@@ -1,1 +1,11 @@
 命令列參數與選項 | Commandline auguments & options
+	--arg-file=file -a file
+		自 file 檔案讀取參數列表
+	--null -0
+		以null character 分開各個參數而非以空白字元
+	--delimiter=delim -d delim
+		以delim字元分開各個參數而非以空白字元
+	--interactive -p
+		分別詢問是否執行各個命令
+	-n max-args --max-args=max-args
+		一次命令執行僅加入max-args個參數

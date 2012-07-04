@@ -1,1 +1,3 @@
 用途 | Usage
+	將每列分隔的輸入內容當作其他指令的參數執行
+	build and execute command lines from standard input
