@@ -1,2 +1,3 @@
 格式 | Format
-
+	man col
+		col [-bfhpx] [-l num]

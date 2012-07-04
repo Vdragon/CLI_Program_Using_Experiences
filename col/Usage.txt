@@ -1,1 +1,3 @@
 用途 | Usage
+	The col utility filters out reverse (and half reverse) line feeds so that the output is in the correct order with only forward and half forward line feeds, and replaces white-space characters with tabs where possible.  This can be useful in processing the output of nroff(1) and tbl(1).
+	雖然 col 有他特殊的用途，不過，很多時候，他可以用來簡單的處理將 [tab] 按鍵取代成為空白鍵！（引用http://linux.vbird.org/linux_basic/0320bash.php）
