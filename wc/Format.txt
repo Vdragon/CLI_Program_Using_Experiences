@@ -1,2 +1,4 @@
 格式 | Format
-
+	wc使用手冊中的版本
+		wc [OPTION]... [FILE]...
+		wc [OPTION]... --files0-from=F

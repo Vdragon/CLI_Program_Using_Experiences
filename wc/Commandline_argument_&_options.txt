@@ -1,1 +1,11 @@
 命令列參數與選項 | Commandline auguments & options
+	無參數
+		印出行數、字數、字元數
+	-l --lines
+		印出行數
+	-c --bytes
+		印出byte數
+	--chars -m
+		印出字元數
+	--words -w
+		印出英文字數
