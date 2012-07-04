@@ -1,0 +1,2 @@
+注意事項 | Attention
+	此程式為bash內建命令

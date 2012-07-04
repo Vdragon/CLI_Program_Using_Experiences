@@ -1,0 +1,8 @@
+使用紀錄 | Use history
+	查詢 type 命令的來源
+		type type
+			type is a shell builtin
+	查詢 echo 命令所有的位置
+		type -a echo
+			echo is a shell builtin
+			echo is /bin/echo

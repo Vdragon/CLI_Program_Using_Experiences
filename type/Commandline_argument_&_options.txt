@@ -1,0 +1,15 @@
+命令列參數與選項 | Commandline auguments & options
+	-t
+		會根據輸入的命令印出底下字串
+			alias
+				命令解釋為另一命令的別名
+			keyword
+				命令為 bash 的保留字
+			function
+			builtin
+				命令為 bash 的內建命令
+			file
+	-p
+		印出輸入的命令的可執行檔位址
+	-a
+		印出所有輸入的命令的位址
