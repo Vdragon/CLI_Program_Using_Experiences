@@ -1,2 +1,2 @@
 格式 | Format
-
+	tr [OPTION]... SET1 [SET2]

@@ -1,1 +1,29 @@
 命令列參數與選項 | Commandline auguments & options
+	選項 | Options
+		-d, --delete
+			刪除字元集合SET1
+		-c, -C, --complement
+			使用字元集合SET1的補集合
+		-t, --truncate-set1
+			將字元集合SET1的寬度限制在SET2的寬度
+		-s, --squeeze-repeats
+			將重複的字元集合SET1中的字元取代為1個對應字元
+	字元集合 | Character Set
+		CHAR1-CHAR2
+		[CHAR*REPEAT]
+		[:alnum:]
+		[:alpha:]
+		[:blank:]
+			all horizontal whitespace
+		[:cntrl:]
+		[:digit:]
+		[:graph:]
+			all printable characters, not including space
+		[:lower:]
+		[:print:]
+			all printable characters, including space
+		[:punct:]
+		[:space:]
+			all horizontal or vertical whitespace
+		[:upper:]
+		[:xdigit:]
