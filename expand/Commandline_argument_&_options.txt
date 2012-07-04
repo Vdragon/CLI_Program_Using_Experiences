@@ -1,0 +1,5 @@
+命令列參數與選項 | Commandline auguments & options
+	-i, --initial
+		僅轉換前方無非空白字元的tab字元
+	-t, --tabs=NUMBER
+		一個tab字元轉換為NUMBER個空白字元（預設為8個）

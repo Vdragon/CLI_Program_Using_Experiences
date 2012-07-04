@@ -1,0 +1,3 @@
+用途 | Usage
+	將tab字元轉換為半形空白字元
+	convert tabs to spaces
