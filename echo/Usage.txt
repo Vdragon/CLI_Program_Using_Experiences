@@ -1,0 +1,3 @@
+用途 | Usage
+	印出一段訊息至標準輸出(standard output)
+	支援bash變數

@@ -1,0 +1,5 @@
+命令列格式 | Commandline Format
+	使用手冊中的版本
+		echo [SHORT-OPTION]... [STRING]...
+		echo LONG-OPTION
+

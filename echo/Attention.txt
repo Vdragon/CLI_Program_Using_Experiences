@@ -1,0 +1,3 @@
+注意事項 | Attention
+	shell可能內建的echo功能可能會跟/bin/echo不一樣
+	通常會優先使用shell內建的echo

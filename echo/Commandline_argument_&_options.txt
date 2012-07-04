@@ -1,0 +1,13 @@
+命令列參數與選項 | Commandline auguments & options
+	無參數、-E
+		印出字串（不處理反斜線(\)跳脫字元序列）
+	-e
+		處理反斜線(\)跳脫字元序列
+		\\     backslash
+		\a     alert (BEL)
+		\b     backspace
+		\n     new line
+		\r     carriage return
+		\t     horizontal tab
+	-n
+		不於印出字串後印出行結尾字元序列
