@@ -1,0 +1,67 @@
+命令列參數與選項 | Commandline auguments & options
+	-U, --update
+		更新軟體到最新穩定版本（註：可能需要root權限）
+	-u UN, --username=UN
+		指定Youtube使用者帳號名稱為UN
+	-p PW, --password=PW
+		指定Youtube使用者帳號密碼為PW
+	-f FMT, --format=FMT
+		指定下載的Youtube影片格式（品質）（預設為可獲取的最高品質）
+		WebM video at 480p: 43
+		WebM video at 720p: 45
+		H264 video in MP4 container at 480p: 18
+		H264 video in MP4 container at 720p: 22
+		H264 video in MP4 container at 1080p: 37
+		H264 video in FLV container at 360p: 34
+		H264 video in FLV container at 480p: 35
+		H263 video at 240p: 5
+		3GP video: 17
+	--all-formats
+		下載所有的影片格式（品質）
+	-s, --simulate
+		僅模擬不下載
+	-e, --get-title
+		僅模擬並印出影片的標題
+	-g, --get-url
+		僅模擬並印出影片原始檔案的網址
+	--get-filename
+		僅模擬並印出影片保存的檔案名稱
+	--console-title
+		如果可行的話將終端機視窗的標題設定為下載進度
+	-t, --title
+		使用影片的標題當作保存檔案名稱
+	-c, --continue
+		繼續下載未完成的檔案
+	--extract-audio
+		產生純音效檔案
+		--audio-format=FORMAT
+			設定音效檔案的格式
+			Possible values are best, aac, mp3, with best being the default.
+	-o TPL, --output=TPL
+		設定保存檔案檔名
+			The -o option allows users to indicate a template for the output file names. The basic usage is
+			not to set any template arguments when downloading a single file, like in youtube-dl -o
+			funny_video.flv "http://some/video". However, it may contain special sequences that will be
+			replaced when downloading each video.
+
+			The special sequences have the format "%(NAME)s". To clarify, that's a percent symbol followed
+			by a name in parenthesis, followed by a lowercase S. Allowed names are:
+
+			id  The sequence will be replaced by the video identifier.
+
+			url The sequence will be replaced by the video URL.
+
+			uploader
+					The sequence will be replaced by the nickname of the person who uploaded the video.
+
+			title
+					The sequence will be replaced by the literal video title.
+
+			stitle
+					The sequence will be replaced by a simplified video title, restricted to alphanumeric
+					characters and dashes.
+
+			ext The sequence will be replaced by the appropriate extension (like "flv" or "mp4").
+
+			epoch
+					The sequence will be replaced by the Unix epoch when creating the file.
