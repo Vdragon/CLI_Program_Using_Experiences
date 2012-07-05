@@ -1,0 +1,2 @@
+使用紀錄 | Use history
+	sudo -p 請輸入%p的密碼： apt-get --assume-yes --allow-unauthenticated install python-software-properties

@@ -1,15 +1,6 @@
-NAME
- sudo, sudoedit - execute a command as another user 
-SYNOPSIS
-sudo [-D level] -h | -K | -k | -V 
+用途 | Usage
+	execute a command as another user
 
- sudo -v [-AknS] [-D level] [-g group name|#gid] [-p prompt] [-u user name|#uid] 
-
- sudo -l[l] [-AknS] [-D level] [-g group name|#gid] [-p prompt] [-U user name] [-u user name|#uid] [command] 
-
- sudo [-AbEHnPS] [-C fd] [-D level] [-g group name|#gid] [-p prompt] [-u user name|#uid] [VAR=value] [-i | -s] [command] 
-
- sudoedit [-AnS] [-C fd] [-D level] [-g group name|#gid] [-p prompt] [-u user name|#uid] file ...
 
 命令參數
 -i （要以superuser權限執行的命令）
@@ -29,9 +20,9 @@ sudo [-D level] -h | -K | -k | -V
 使用方式
 sudo 「要以superuser權限執行的命令」
 sudo -p 「提示使用者輸入密碼的文字」 「要以superuser權限執行的命令」
-sudo 
+sudo
 
 使用紀錄
 sudo -i apt-get update
 sudo -i -p "請輸入%p的密碼：" echo -e "成功取得超級使用者(superuser, root)權限。"
-sudo -i 
+sudo -i

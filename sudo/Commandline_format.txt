@@ -1,0 +1,7 @@
+命令列格式 | Commandline Format
+	man sudo
+		sudo [-D level] -h | -K | -k | -V
+		sudo -v [-AknS] [-D level] [-g group name|#gid] [-p prompt] [-u user name|#uid]
+		sudo -l[l] [-AknS] [-D level] [-g group name|#gid] [-p prompt] [-U user name] [-u user name|#uid] [command]
+		sudo [-AbEHnPS] [-C fd] [-D level] [-g group name|#gid] [-p prompt] [-u user name|#uid] [VAR=value] [-i | -s] [command]
+		sudoedit [-AnS] [-C fd] [-D level] [-g group name|#gid] [-p prompt] [-u user name|#uid] file ...
