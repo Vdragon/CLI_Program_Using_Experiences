@@ -1,18 +1,18 @@
 使用紀錄 | Use history
 	airmon-ng
-		啟動無線網路介面wlan0監聽封包模式
+		啟動 wlan0無線網路介面 監聽封包模式
 			airmon-ng start wlan0
-		啟動無線網路介面wlan0監聽封包模式並鎖定(?)頻道11
+		啟動 wlan0無線網路介面 監聽封包模式並鎖定(?)11頻道
 			airmon-ng start wlan0 11
-		停用無線網路介面mon0監聽封包模式
+		停用 mon0無線網路介面 監聽封包模式
 			airmon-ng stop mon0
 	airodump-ng
-		偵測無線網路介面mon0監聽到的Access Point的狀態
+		偵測 mon0無線網路介面 監聽到的 Access Point and it's client 的狀態
 			airodump-ng mon0
 			airodump-ng --channel 11 mon0
 				--channel 11
 					鎖定偵測11頻道
-		dump無線網路介面mon0監聽到的封包
+		dump mon0無線網路介面 監聽到的封包
 			airodump-ng --channel 11 --bssid 01:23:45:67:89:AB -w target_AP_dump.binary mon0
 	aireplay-ng
 		注入封包測試 | injection test
