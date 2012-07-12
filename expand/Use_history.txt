@@ -1,1 +1,4 @@
 使用紀錄 | Use history
+	將檔案「README」中的Tab字元改為兩個空白字元
+		expand --initial --tabs=2 README.txt > README.expanded.txt
+		mv --force README.expanded.txt README.txt
