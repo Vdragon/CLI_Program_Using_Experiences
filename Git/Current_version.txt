@@ -73,9 +73,13 @@ git rm --cached 「globbing patterns」
 ##不實際移除檔案
 git rm --dry-run
 
+####git clone相關命令
 ##將遠端repository複製到本地端
 git clone 「repository的位址」
 git clone 「repository的位址」 「要自訂的repository目錄」
+
+##複製指定的branch
+git clone --branch 「branch名稱」 「repository的位址」
 
 ####git diff相關指令
 ##檢視已修改但未add進staging area的檔案差異
