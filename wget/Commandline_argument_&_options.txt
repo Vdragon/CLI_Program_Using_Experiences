@@ -1,0 +1,21 @@
+命令列參數與選項 | Commandline auguments & options
+	-q --quiet
+		不讓wget印出訊息
+	-v --verbose
+		讓wget印出更多訊息
+	-nv --no-verbose
+		關掉詳細輸出
+	-d --debug
+		讓wget印出除錯訊息（若建構選項支援的話）
+	-o 「紀錄檔檔名」  --output-file=「紀錄檔檔名」
+		紀錄所有訊息到紀錄檔中
+	-a 「紀錄檔檔名」  --append-output=「紀錄檔檔名」
+		紀錄所有訊息到紀錄檔中（若檔案已存在則接續紀錄）
+	-i file --input-file=file
+		自檔案中讀取URL，如果 file 為「-」的話自標準輸入(standard input)讀取
+	-c  --continue
+		如果伺服器支援的話續傳一個部份被下載的檔案
+	-O file --output-document=file
+		將下載的資料輸出到 file ，如果 file 為「-」的話輸出至標準輸出(standard output)
+	-t times --tries=times
+		重試次數設為 times（預設為20） 次，如果 times 為0則重試無限次數

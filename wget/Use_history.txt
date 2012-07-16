@@ -1,0 +1,5 @@
+使用紀錄 | Use history
+	下載公鑰後將公鑰交給 apt-key 新增到系統中
+		wget --output-document=- 「公鑰的網址」 | sudo apt-key add -
+	下載 BackTrack 5 RC2 光碟映像檔（無限重試次數、續傳）
+		wget --verbose --tries=0 --continue http://iso.linuxquestions.org/download/159/5186/http/mirror.switch.ch/BT5R2-GNOME-32.iso
