@@ -37,7 +37,7 @@ git config 「設定值的名稱」
 全域：--global
 
 ##啟用HTTPS傳輸協定密碼暫時保存
-git config --global credential.helper cached
+git config --global credential.helper cache
 
 ####git help相關指令
 ##檢視特定功能的說明
