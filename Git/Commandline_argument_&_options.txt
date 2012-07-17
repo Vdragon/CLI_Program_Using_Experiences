@@ -24,7 +24,7 @@
 		-A, --all
 			加入所有目前被追蹤的檔案的變更內容到 staging area 中
 		--interactive　-i
-			以交談方式處理
+			進入交談模式（請參閱git add使用手冊「INTERACTIVE MODE」的部份）
 	git rm
 		「檔案／目錄名稱」
 			將檔案／目錄自 working tree 中移除（可用萬用字元）
@@ -77,7 +77,7 @@
 				可用值：oneline, short, full, fuller
 		--pretty=format:"「格式控制字串(format control string)」"
 			輸出自訂格式commit log
-			format specifier如下
+			format specifier列表如下
 				%H  Commit hash
 				%h  Abbreviated commit hash
 				%T  Tree hash
