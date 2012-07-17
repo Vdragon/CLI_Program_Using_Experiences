@@ -1,0 +1,10 @@
+命令列格式 | Commandline Format
+	man swapon
+		Get info:
+			swapon -s [-h] [-V]
+		Enable/disable:
+			swapon [-d] [-f] [-p priority] [-v] specialfile...
+			swapoff [-v] specialfile...
+		Enable/disable all:
+			swapon -a [-e] [-f] [-v]
+			swapoff -a [-v]

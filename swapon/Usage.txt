@@ -1,0 +1,3 @@
+用途 | Usage
+	用來將裝置檔案或檔案啟用虛擬記憶體的程式
+	swapon is used to specify devices on which paging and swapping are to take place.
