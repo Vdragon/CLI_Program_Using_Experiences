@@ -1,0 +1,7 @@
+使用紀錄 | Use history
+	git log
+		將commit log 改為Changelog
+			git log --graph --pretty=format:'%s - %h (%cd) %an' --abbrev-commit
+		檢視最後兩筆commit紀錄
+			git log -2
+		

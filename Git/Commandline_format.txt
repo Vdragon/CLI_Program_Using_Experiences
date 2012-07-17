@@ -1,0 +1,10 @@
+命令列格式 | Commandline Format
+	基本格式
+		git 「命令名稱」 （命令參數）
+	git config
+		修改全域設定值
+			git config --global 「設定值名稱」 「設定值內容」
+		修改內容倉庫(content repository)範圍的設定值
+			git config 「設定值名稱」 「設定值內容」
+	git help 「命令名稱」
+		察看指定命令的使用手冊

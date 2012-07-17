@@ -1,0 +1,114 @@
+命令列參數與選項 | Commandline auguments & options
+	git config
+		--global
+			修改全域而非內容倉庫(content repository)範圍的設定值
+		user.email 「committer的電子郵件地址」
+			修改 committer 的電子郵件地址
+		merge.tool 「使用的軟體路徑」
+			設定merge conflict時要用的diff工具，例如vimdiff、gvimdiff
+		core.editor 「使用的軟體路徑」
+			設定commit時要用的文字編輯軟體，例如emacs、vi(m)、nano
+		--list
+			列出所有設定值
+		「設定值的名稱」
+			列出特定設定值的名稱
+		credential.helper 「保存模式」
+			用特定模式暫時保存HTTPS連線的cookie？模式列表如下
+				cache
+	git help
+		「命令名稱」
+			顯示指定命令的使用手冊
+	git add
+		「檔案／目錄名稱」
+			加入指定檔案／目錄的變更內容到 staging area 中（可用萬用字元）
+		-A, --all
+			加入所有目前被追蹤的檔案的變更內容到 staging area 中
+		--interactive　-i
+			以交談方式處理
+	git rm
+		「檔案／目錄名稱」
+			將檔案／目錄自 working tree 中移除（可用萬用字元）
+		--recursive -r
+			如果「檔案／目錄名稱」為目錄則連同子目錄一起移除
+		--cached
+			將檔案／目錄自 staging area 中移除
+		--dry-run
+			印出而非實際移除會被移除的檔案
+	git mv
+		「更名前檔案名稱」 「更名後檔案名稱」
+			更動有被追蹤版本的檔案／目錄的名稱
+	git clone
+		「內容倉庫(content repository)的網路位址」
+			將遠端內容倉庫(content repository)最終commit的分支(branch)複製到本地端當前工作目錄(current working directory)底下的「內容倉庫(content repository)名稱」目錄
+		「內容倉庫(content repository)的網路位址」 「自訂的目錄名稱」
+			將遠端內容倉庫(content repository)最終commit的分支(branch)複製到本地端當前工作目錄(current working directory)底下的「自訂的目錄名稱」目錄
+		--branch 「分支(branch)名稱」
+			複製指定的分支(branch)而非最終commit的分支(branch)
+	git diff
+		無參數
+			檢視已修改但未移進 staging area 的內容差異資訊
+		--staged 或 --cached
+			檢視移進 staging area 的內容差異資訊
+		「版本Ａ」　「版本Ｂ」
+			檢視「版本Ａ」與「版本Ｂ」之間的內容差異資訊
+	git commit
+		無參數
+			將 stageing area 中的內容變更提交(commit)為一個 commit
+		-m '「此commit的描述訊息」'
+			直接指定commit的描述訊息
+		-v
+			印出更詳細的資料（包括diff）
+		-a --all
+			將有追蹤版本的檔案的變更直接提交（跳過移進 staging area 的步驟）
+		--amend
+			將內容變更合併入最後一個commit，使用範例如下
+				git commit
+				git add forgotten_change
+				git commit --amend
+	git log
+		無參數
+			檢視commit紀錄
+		-p
+			檢視包含diff的commit紀錄
+		--stat
+			追加顯示統計圖
+		--pretty=
+			以特定格式顯示commit log
+				可用值：oneline, short, full, fuller
+		--pretty=format:"「格式控制字串(format control string)」"
+			輸出自訂格式commit log
+			format specifier如下
+				%H  Commit hash
+				%h  Abbreviated commit hash
+				%T  Tree hash
+				%t  Abbreviated tree hash
+				%P  Parent hashes
+				%p  Abbreviated parent hashes
+				%an Author name
+				%ae Author e-mail
+				%ad Author date (format respects the –date= option)
+				%ar Author date, relative
+				%cn Committer name
+				%ce Committer email
+				%cd Committer date
+				%cr Committer date, relative
+				%s  Subject
+		--graph
+			繪製出commit圖
+		--since=「時刻、時距」
+			檢視多久時間以前之後的commit log
+			範例
+				2.weeks
+				2008-01-15
+				2 years 1 day 3 minutes ago
+		--until=「時間」
+			檢視多久時間以前之前的commit log
+		--author 「作者名稱」
+			檢視特定作者的commit
+		--grep 「關鍵字」
+			以指定「關鍵字」搜索commit log
+		「多個條件」 --all-match
+			輸出符合多個條件「交集(AND)」的條件的commit log
+		「檔案名稱」
+			將commit log限制在某個檔案
+			

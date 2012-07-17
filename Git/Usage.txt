@@ -1,0 +1,38 @@
+用途 | Usage
+	git config
+		編輯系統／特定內容倉庫(content repository)範圍的Git設定值的命令
+	git add
+		將指定變更加進 staging area 中的命令
+	git rm
+		將指定檔案或變更自內容倉庫(content repository)或 staging area 中移除的命令
+	git mv
+		移動或更名內容倉庫(content repository)中的檔案的命令
+	git commit
+		提交(commit) staging area 中的變更為一個 commit 的命令
+	git log
+		檢視先前的 commit 的命令
+	git diff
+		檢視不同版本原始程式碼
+	git clone
+		將遠端內容倉庫(content repository)複製到本地端的命令
+	git reset
+		將原始程式碼倉庫(repository) 中的資料重設(reset)的命令
+	git remote
+		管理遠端原始程式碼倉庫(repository)的命令
+	git tag
+		管理標籤(tag)的命令
+	git branch
+		管理分支(branch)的命令
+	git checkout
+		察看內容指定版本或分支(branch)的命令
+	git merge
+		將一個另一個分支(branch)合併(merge)到一個分支(branch)的命令
+	git fetch
+		獲取遠端內容倉庫(content repository)到本地內容倉庫(content repository)的命令
+	git push
+		將本地內容倉庫(content repository)資料複製到遠端內容倉庫(content repository)的命令
+	git clean
+		移除沒有納入版本控制的檔案的命令
+	git revert
+		回退指定內容修改的命令
+	git cherry-pick
