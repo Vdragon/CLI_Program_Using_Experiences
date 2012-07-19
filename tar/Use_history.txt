@@ -18,7 +18,10 @@
 				欲封存檔案來源
 			| pigz
 				重新導向標準輸出(stdout)到pigz
+			（pigz沒有檔案名稱參數）
+				讀取標準輸入(standard input)資料壓縮之後輸出到標準輸出(standard output)
 			--best
 				使用最佳壓縮壓縮演算法
 			> "linux-3.4.3_patched_pigz.tar.gz"
 				將pigz輸出至標準輸出(stdout)的資料重新導向到「linux-3.4.3_patched_pigz.tar.gz」檔案
+		tar --create "linux-3.4.5/" | pigz --best > "linux-3.4.5_AppArmor_v2.4_Capability_Patch_patched.tar.gz"
