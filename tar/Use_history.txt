@@ -25,3 +25,4 @@
 			> "linux-3.4.3_patched_pigz.tar.gz"
 				將pigz輸出至標準輸出(stdout)的資料重新導向到「linux-3.4.3_patched_pigz.tar.gz」檔案
 		tar --create "linux-3.4.5/" | pigz --best > "linux-3.4.5_AppArmor_v2.4_Capability_Patch_patched.tar.gz"
+		tar --create "linux-3.4.5/" | pigz --best > "linux 3.4.5 Phase1 patched.tar.gz"
