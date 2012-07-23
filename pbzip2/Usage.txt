@@ -1,0 +1,2 @@
+用途 | Usage
+	以multithread方式bzip2壓縮檔案，可以充份發揮多核心CPU的優勢

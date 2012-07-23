@@ -1,0 +1,2 @@
+使用紀錄 | Use history
+	tar --create "linux-3.4.6/" | pbzip2 --best > "linux-3.4.6_1_phase.tar.bz2"
