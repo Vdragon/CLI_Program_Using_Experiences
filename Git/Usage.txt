@@ -27,6 +27,8 @@
 		察看內容特定版本或分支(branch)的命令
 	git merge
 		將一個另一個分支(branch)合併(merge)到一個分支(branch)的命令
+	git mergetool
+		（於git merge後）執行指定merge衝突解決工具來解決merge衝突
 	git fetch
 		獲取遠端內容倉庫(content repository)到本地內容倉庫(content repository)的命令
 	git push
