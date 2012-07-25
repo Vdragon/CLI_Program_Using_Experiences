@@ -1,0 +1,24 @@
+詞語解釋 | Term explanations
+	(content) repository
+		（內容）倉庫
+			為實際保存內容的場所
+	(content) difference
+		（內容）變更
+			通常包括三者：列移除（－）、列新增（＋）、以及列修改（△）。在Git內容版本控制系統中列修改（△）以移除（－）原先內容的列以及新增（＋）變更後內容的列來表示。
+	(content difference) commit
+		（內容變更）提交
+			當您要將內容變更保存進內容倉庫(content repository)中的時候，您需要提交(commit)一個（內容變更）提交(commit)（前為動詞後為名詞）
+	staging area
+		暫存內容變更，等待提交內容變更的位置
+	add (file) to staging area
+		將特定檔案的內容變更新增到staging area中
+	branch
+		分支
+			不同的分支可以分開進行不同的用途
+	merge
+		合併
+			將一分支的內容變更合併到另一分支
+	tag
+		標籤
+			用以標示特定變更的實體
+	
