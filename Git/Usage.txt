@@ -24,7 +24,7 @@
 	git branch
 		管理分支(branch)的命令
 	git checkout
-		察看內容指定版本或分支(branch)的命令
+		察看內容特定版本或分支(branch)的命令
 	git merge
 		將一個另一個分支(branch)合併(merge)到一個分支(branch)的命令
 	git fetch
