@@ -4,4 +4,9 @@
 			git log --graph --pretty=format:'%s - %h (%cd) %an' --abbrev-commit
 		檢視最後兩筆commit紀錄
 			git log -2
-		
+	git reset
+		將指定檔案／目錄的修改移出 staging area（又稱 unstage）
+			git reset HEAD -- 「檔案名稱」
+	git config
+		設定全域設定值：讓git diff輸出Tab字元寬度設定為2
+			git config --global core.pager 'less -x4'
