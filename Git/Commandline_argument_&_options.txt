@@ -25,6 +25,8 @@
 			加入所有目前被追蹤的檔案的變更內容到 staging area 中
 		--interactive　-i
 			進入交談模式（請參閱git add使用手冊「INTERACTIVE MODE」的部份）
+		--
+			此選項可以用來區隔選項與「檔案／目錄名稱」
 	git rm
 		「檔案／目錄名稱」
 			將檔案／目錄自 working tree 中移除（可用萬用字元）
@@ -111,4 +113,96 @@
 			輸出符合多個條件「交集(AND)」的條件的commit log
 		「檔案名稱」
 			將commit log限制在某個檔案
-			
+	git reset
+		「檔案／目錄名稱」
+			重設「檔案／目錄名稱」的內容修改
+		--hard
+	git remote
+		無參數
+			顯示此內容倉庫(content repository)的遠端內容倉庫名稱
+		-v --verbose
+			多列出遠端內容倉庫(content repository)的網路位址
+		add
+			新增遠端內容倉庫(content repository)
+		rm 「遠端repository名稱」
+			移除遠端內容倉庫(content repository)的資訊（非移除遠端內容倉庫(content repository)本身）
+			（rm應為remove的縮寫）
+		show 遠端內容倉庫(content repository)名稱
+			檢視遠端內容倉庫(content repository)的資訊
+		rename 「原遠端repository名稱」 「新遠端repository名稱」
+			重新命名遠端repository的參照(reference)名稱
+		set-url 「遠端repository名稱」 「新遠端repository網址」
+			重新設定遠端repository的網路位址
+	git fetch
+		「遠端repository名稱」
+			將「遠端repository名稱」內容倉庫(content repository)的修改匯入到本地內容倉庫（未形成commit）
+	git pull
+		「遠端repository名稱」
+			fetch並merge遠端repository中的修改
+	git tag
+		「tag名稱」
+			建立一個lightweight標籤(tag)
+		-l或--list '「tag patterns」'
+			列出所有符合該pattern的標籤(tag)
+		-a 「tag名稱」 -m '「tag的描述」'
+			建立被注釋的(annotated)標籤(tag)
+		-s 「tag名稱」 -m '「tag的描述」'
+			建立一個被簽署的(signed)標籤(tag)
+		-a 「tag名稱」 「commit的hash值」
+			tag 一個過去的commit
+	git checkout
+		「branch名稱」
+			切換到另一個branch的HEAD指向內容版本
+		-b 「branch名稱」
+			新增並切換到「分支名稱」
+		 -- 「檔案路徑」
+			（unstage檔案之後）將檔案的修改恢復到上次commit的狀態
+	git merge
+		「分支名稱」
+			將「分支名稱」的內容變更與目前所在分支合併
+	git branch
+		（無參數）
+			察看本地端的分支(branch)
+		-r --remotes
+			改為存取遠端分支
+		「branch名稱」
+			新建「branch名稱」分支(branch)
+		-v --verbose
+			察看分支時提供更詳細的資訊（如SHA1 checksum等）
+		--merged
+			顯示目前已經merge進其他分支的分支名稱，沒有標示*的分支可以安全刪除
+		--no-merged
+			顯示所有未merge進其他分支的分支名稱
+		-d 「branch名稱」
+			刪除一個分支
+				當--remotes選項存在時為刪除遠端分支的reference而非實際刪除遠端分支，該操作可用git push 「程式碼倉庫」 :「分支名稱」來達成
+				如果該分支的內容變更沒有合併(merge)到其他分支的話以策安全將不會實際刪除分支
+		-D 「branch名稱」
+			強制刪除一個未合併(merge)內容變更到其他分支的分支
+	git push
+		「遠端內容倉庫名稱」 「遠端內容倉庫分支名稱」
+			將本地端目前所在分支的內容變更合併到遠端內容倉庫的指定分支中
+		--set-upstream
+			同時設定該遠端分支為預設push的分支
+		「遠端repository名稱」 「tag名稱」
+			將tag傳到遠端內容倉庫上
+		將所有遠端內容倉庫沒有的tag傳到遠端內容倉庫上
+		--tags
+			將所有遠端內容倉庫沒有的tag傳到遠端內容倉庫上
+		「遠端內容倉庫名稱」 :「遠端內容倉庫分支名稱」
+			刪除遠端內容倉庫「遠端內容倉庫分支名稱」分支
+	git cherry-pick
+	git clean
+		（無參數）
+			在有--force選項時移除所有Git不認識的檔案（包括沒有納入版本控制以及未被忽略的檔案）
+		--force
+			實際進行移除
+		--dry-run
+			不實際移除檔案，印出將會進行的動作
+		-X
+			只移除被Git忽略的檔案
+		-d
+			如果目錄中包含另一個內容倉庫也進行移除
+	git revert
+		「commit名稱」
+			回退某個commit
