@@ -1,0 +1,18 @@
+使用紀錄 | Use history
+	lsblk --output NAME,LABEL,FSTYPE,SIZE
+		NAME   LABEL          FSTYPE   SIZE
+		sda                          931.5G
+		├─sda1 Ubuntu         ext4     100G
+		├─sda2 Windows_XP     ntfs     100G
+		├─sda3 Windows_8_CPre ntfs      90G
+		├─sda4                           1K
+		├─sda5                swap      10G
+		├─sda6 Linux Mint     ext4     100G
+		├─sda7 OS_IMAGES      ntfs     100G
+		└─sda8 FILES          ntfs   431.5G
+		sr0                           1024M
+		zram0                 swap     1.9G
+		sdb                              8G
+		├─sdb1 /boot          ext3   141.2M
+		├─sdb2 /              ext3     6.6G
+		└─sdb3                swap     1.3G

@@ -1,0 +1,43 @@
+命令列參數與選項 | Commandline auguments & options
+	（無參數）
+		以樹狀格式列出除了 RAM disk 以外的 block裝置
+	--all -a
+		印出全部裝置
+	-D --discard
+		印出 block裝置 是否俱備 TRIM、UNMAP能力（固態硬碟(SSD)需要用到）
+	--fs -f
+		印出檔案系統資訊
+	--list -l
+		用列表格式（而非樹狀格式）印出
+	--noheadings -n
+		不印出開頭列
+	-o --output
+		指定印出的欄位格式（以逗號分隔），可用欄位如下
+			NAME  device name
+			KNAME  internal kernel device name
+			MAJ:MIN  major:minor device number
+			FSTYPE  filesystem type
+			MOUNTPOINT  where the device is mounted
+			LABEL  filesystem LABEL
+			UUID  filesystem UUID
+			RO  read-only device
+			RM  removable device
+			MODEL  device identifier
+			SIZE  size of the device
+			STATE  state of the device
+			OWNER  user name
+			GROUP  group name
+			MODE  device node permissions
+			ALIGNMENT  alignment offset
+			MIN-IO  minimum I/O size
+			OPT-IO  optimal I/O size
+			PHY-SEC  physical sector size
+			LOG-SEC  logical sector size
+			ROTA  rotational device
+			SCHED  I/O scheduler name
+			RQ-SIZE  request queue size
+			TYPE  device type
+			DISC-ALN  discard alignment offset
+			DISC-GRAN  discard granularity
+			DISC-MAX  discard max bytes
+			DISC-ZERO  discard zeroes data

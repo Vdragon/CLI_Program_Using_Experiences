@@ -1,0 +1,2 @@
+詞語解釋 | Term explanations
+	部份功能需要系統管理員權限才能使用
