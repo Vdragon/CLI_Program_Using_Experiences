@@ -1,0 +1,2 @@
+用途 | Usage
+	將一個未載入的 kernel module 載入到 kernel中
