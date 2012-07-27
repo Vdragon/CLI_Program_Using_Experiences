@@ -1,0 +1,4 @@
+命令列格式 | Commandline Format
+	man make
+		make [ -f makefile ] [  options  ]  ...  [       targets ] ...
+	
