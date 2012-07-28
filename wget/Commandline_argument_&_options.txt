@@ -19,3 +19,5 @@
 		將下載的資料輸出到 file ，如果 file 為「-」的話輸出至標準輸出(standard output)
 	-t times --tries=times
 		重試次數設為 times（預設為20） 次，如果 times 為0則重試無限次數
+	-r --recursive
+		以遞迴方式下載
