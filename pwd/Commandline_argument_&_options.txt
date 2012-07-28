@@ -1,0 +1,5 @@
+命令列參數與選項 | Commandline auguments & options
+	（無參數）, -L, --logical
+		允許包含symbolic連結
+	-P, --physical
+		不允許包含symbolic連結

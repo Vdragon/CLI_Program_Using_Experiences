@@ -1,0 +1,2 @@
+用途 | Usage
+	印出當前工作目錄(current working directory)
