@@ -4,4 +4,5 @@
 		youtube-dl --output='%(title)s.%(ext)s' http://www.youtube.com/watch?v=2RE0tZKtZNQ
 		youtube-dl --output='%(title)s.%(ext)s' http://www.youtube.com/watch?v=Sr3hyvjNp94
 	以「『影片標題』.『原始檔案副檔名』」格式下載影片（通用版本(?)）
-		youtube-dl --output='%(title)s.%(ext)s' --console-title --continue http://www.youtube.com/watch?v=
+		youtube-dl --output='%(title)s.%(ext)s' --console-title --continue 'http://www.youtube.com/watch?v=5M92qFNdV8s'
+		youtube-dl --output='%(title)s.%(ext)s' --console-title --continue 'http://www.youtube.com/watch?v=sAf68c4-gtQ&feature=plcp' 'http://www.youtube.com/watch?v=UyytdJN_ChI&feature=plcp' 
