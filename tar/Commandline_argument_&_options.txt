@@ -2,9 +2,9 @@
 	--preserve
 		保留檔案及目錄資訊（屬性等）（與-p -s相等）
 	-p --preserve-permissions --same-permissions
-		保留原來的檔案及目錄屬性
+		保留原來的檔案或目錄屬性
 	-s --preserve-order --sameorder
-		保留原來的檔案及目錄排列順序
+		保留原來的檔案或目錄排列順序
 	--atime-preserve
 		保留原來檔案或目錄的存取時間(access time)
 	--absolute-names		
