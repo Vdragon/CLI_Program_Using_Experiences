@@ -2,6 +2,10 @@
 	將目錄以pbzip2壓縮為Bzip壓縮封存檔
 		tar --create "linux-3.4.6/" | pbzip2 --best > "linux-3.4.6_phase_1.tar.bz2"
 		tar --create "linux-3.4.6/" | pbzip2 --best > "linux-3.4.6_release.tar.bz2"
-		tar --preserve --create "Programming/" | pbzip2 --best -m2000 --verbose > "/media/S_FILES/PRIVATE/Programming20120801.tar.bz2"
+		tar --preserve --atime-preserve --create "Programming/" | pbzip2 --best -m2000 --verbose > "/media/S_FILES/PRIVATE/Programming20120801.tar.bz2"
 			-m2000
 				最大可使用2GB記憶體
+			--preserve
+				保存檔案資訊（如權限等）
+			--atime-preserve
+				保存存取時間(access time)
