@@ -1,1 +1,4 @@
 使用紀錄 | Use history
+	備份／還原/media/Data下的檔案與目錄
+		sudo cp --archive --recursive --verbose --no-clobber /media/S_Data .
+		sudo cp --archive --recursive --verbose --no-clobber . /media/S_Data
