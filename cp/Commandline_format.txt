@@ -1,0 +1,5 @@
+命令列格式 | Commandline Format
+	man cp
+		cp [OPTION]... [-T] SOURCE DEST
+		cp [OPTION]... SOURCE... DIRECTORY
+		cp [OPTION]... -t DIRECTORY SOURCE...

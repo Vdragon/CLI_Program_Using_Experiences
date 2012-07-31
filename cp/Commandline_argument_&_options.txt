@@ -1,0 +1,30 @@
+命令列參數與選項 | Commandline auguments & options
+	「來源檔案或目錄」 「目標目錄」
+		將「來源檔案或目錄」複製到「目標目錄」
+	--archive
+	--attributes-only
+		不複製「來源檔案或目錄」，只複製「來源檔案或目錄」屬性
+	-f --force
+		如果「目標目錄」有相同名稱的檔案或目錄就覆寫之
+	-i, --interactive
+		如果覆寫情形發生詢問是否覆寫檔案
+	-l, --link
+		建立檔案的hard link而非複製檔案
+	-L, --dereference
+		跟隨來源檔案的symbolic連結
+	-P, --no-dereference
+		不跟隨來源檔案的symbolic連結
+	-n, --no-clobber
+		不覆寫已存在檔案
+	-R, -r, --recursive
+		亦複製子目錄
+	-s, --symbolic-link
+		建立檔案的symbolic link而非複製檔案
+	-u, --update
+		當「來源檔案或目錄」比「目標目錄」還要新時才覆寫
+	-v, --verbose
+		顯示進行的行為
+	-x, --one-file-system
+		不跨越到別的檔案系統
+	--help
+		顯示幫助訊息
