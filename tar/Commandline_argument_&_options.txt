@@ -1,1 +1,20 @@
 命令列參數與選項 | Commandline auguments & options
+	--preserve
+		保留檔案及目錄資訊（屬性等）（與-p -s相等）
+	-p --preserve-permissions --same-permissions
+		保留原來的檔案及目錄屬性
+	-s --preserve-order --sameorder
+		保留原來的檔案及目錄排列順序
+	--absolute-names		
+		使用絕對路徑封裝檔案
+	--list
+		列出封裝檔中的內容
+	--exclude=「檔案或目錄路徑」
+		排除檔案或目錄
+	--exclude-vcs		
+		排除版本控制系統使用的目錄
+	--one-file-system
+		排除其他的檔案系統
+	--never-mtime=「日期」
+		僅封裝比「日期」還要新的檔案及目錄
+	--interactive

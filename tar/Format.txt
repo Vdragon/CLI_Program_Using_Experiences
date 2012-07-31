@@ -21,24 +21,3 @@ bzip壓縮演算法封裝tar封裝檔案
 	tar --verbose --bzip2 --create --file 「封裝檔案名稱」 「封裝資料來源」
 解封裝gzip壓縮tar封裝檔案
 	tar --verbose --gzip2 --extract --file 「封裝檔案名稱」 --directory 「解封裝檔案欲保存目錄」 （「欲解封裝檔案路徑」）
-
-其他參數
-	保留檔案及目錄資訊（屬性等）(obseluted)
-		--preserve
-	-p --preserve-permissions --same-permissions
-		保留原來的屬性
-	-s --preserve-order --sameorder
-
-	使用絕對路徑封裝檔案
-		--absolute-names
-	列出封裝檔中的內容
-		--list
-	排除檔案或目錄
-		--exclude=「檔案或目錄路徑」
-	排除版本控制系統使用的目錄
-		--exclude-vcs
-	排除其他的檔案系統
-		--one-file-system
-	僅封裝比「日期」還要新的檔案及目錄
-		--never-mtime=「日期」
-	--interactive
