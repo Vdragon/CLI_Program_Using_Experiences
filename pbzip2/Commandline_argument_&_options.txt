@@ -1,1 +1,5 @@
 命令列參數與選項 | Commandline auguments & options
+	-m「整數」
+		最大使用的記憶體大小（單位為MB）
+	--verbose
+		顯示較詳細訊息
