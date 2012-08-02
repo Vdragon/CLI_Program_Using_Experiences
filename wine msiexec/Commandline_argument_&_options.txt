@@ -1,0 +1,9 @@
+命令列參數與選項 | Commandline auguments & options
+	/i 「*.msi檔案」
+		安裝「*.msi檔案」
+	/f 「*.msi檔案」
+		修復「*.msi檔案」的安裝
+	/uninstall /x
+		移除「*.msi檔案」的安裝
+	/help /?
+		顯示說明訊息

@@ -1,0 +1,2 @@
+命令列格式 | Commandline Format
+	wine msiexec 「命令」 「必要參數」 （可選參數）

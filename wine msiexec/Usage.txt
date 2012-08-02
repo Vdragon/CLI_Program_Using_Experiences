@@ -1,0 +1,2 @@
+用途 | Usage
+	Wine底下的Microsoft Installer格式檔案安裝工具
