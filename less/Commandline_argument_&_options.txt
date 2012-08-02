@@ -1,0 +1,14 @@
+命令列參數與選項 | Commandline auguments & options
+	「檔案」
+		要輸出內容的「檔案」的檔案名稱
+	--tabs=「正整數」 -x「正整數」
+		設定一個tab字元的寬度為「正整數」個半形字元寬度
+	--
+		標示其後之參數是檔案名稱不是選項
+	-s or --squeeze-blank-lines
+		將多個空白行壓縮為一個
+	-S or --chop-long-lines
+		將超過螢幕寬度的部份截掉而非折行
+	--force
+		強迫開啟非純文字的檔案
+	

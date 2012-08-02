@@ -1,0 +1,7 @@
+命令列格式 | Commandline Format
+	from man less
+		less [-[+]aABcCdeEfFgGiIJKLmMnNqQrRsSuUVwWX~]
+			[-b space] [-h lines] [-j line] [-k keyfile]
+			[-{oO} logfile] [-p pattern] [-P prompt] [-t tag]
+			[-T tagsfile] [-x tab,...] [-y lines] [-[z] lines]
+			[-# shift] [+[+]cmd] [--] [filename]...
