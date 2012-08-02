@@ -1,0 +1,4 @@
+用途 | Usage
+	from man groups
+		print the groups a user is in
+	印出使用者所在的群組

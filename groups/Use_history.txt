@@ -1,0 +1,4 @@
+使用紀錄 | Use history
+	groups Vdragon root
+		Vdragon : Vdragon adm cdrom sudo dip plugdev lpadmin sambashare vboxusers
+		root : root
