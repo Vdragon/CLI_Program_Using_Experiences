@@ -1,0 +1,3 @@
+用途 | Usage
+	暫時切換使用者的有效群組(effective group)的命令
+	可用於建立該有效群組(effective group)的使用者皆能存取的檔案
