@@ -1,2 +1,5 @@
 使用紀錄 | Use history
-	sudo -p 請輸入%p的密碼： apt-get --assume-yes --allow-unauthenticated install python-software-properties
+	以superuser使用者權限執行「要以superuser權限執行的命令」
+		sudo 「要以superuser權限執行的命令」
+	以「請輸入%p的密碼：」訊息提示sudo使用者密碼
+		sudo -p "請輸入%p的密碼：" apt-get --assume-yes --allow-unauthenticated install python-software-properties
