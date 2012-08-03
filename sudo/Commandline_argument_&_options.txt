@@ -1,5 +1,7 @@
 命令列參數與選項 | Commandline auguments & options
-	-i 「要以superuser權限執行的命令」
+	「要以superuser權限執行的命令」
+		要指定使用者執行命令
+	-i 
 		以目標使用者身份執行該使用者帳號指定的shell並在其中執行命令
 		於此情況該使用者的shell設定會被讀取
 	-p 「提示使用者輸入密碼的文字」
