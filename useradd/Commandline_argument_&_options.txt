@@ -1,0 +1,24 @@
+命令列參數與選項 | Commandline auguments & options
+	「使用者帳號名稱」
+		建立「使用者帳號名稱」的新使用者帳號
+	-u/--uid 「使用者ID(UID)」
+		手動指定使用者ID(UID)為「使用者ID(UID)」
+	-g/--gid 「初始群組的名稱」
+		手動指定初始群組的名稱為「初始群組的名稱」
+	-G,--groups 「以逗號分隔的多個群組名稱」
+		「使用者帳號名稱」要加入的群組
+	-c/--comment 「使用者帳號的說明訊息」
+	-d/--home-dir 「使用者家目錄路徑」
+		手動指定使用者的家目錄路徑為「使用者家目錄路徑」，如果該目錄不存在則自動建立
+	-s/--shell 「殼程式(shell)可執行檔路徑」
+		手動指定使用者預設的殼程式(shell)
+	-r --system
+		建立系統帳號而非使用者帳號
+	--defaults/-D （無其他參數）
+		顯示useradd預設值（來自/etc/defaults/useradd）
+	--defaults/-D 
+		變更useradd預設值（修改/etc/defaults/useradd）（此時沒有「使用者帳號名稱」參數）
+		--home-dir 「新的家目錄路徑」
+			變更useradd預設值的家目錄路徑設定
+		...
+		

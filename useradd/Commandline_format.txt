@@ -1,0 +1,10 @@
+命令列格式 | Commandline Format
+	from man useradd
+		useradd [-c comment] [-d home_dir]
+						[-e expire_date] [-f inactive_time]
+						[-g initial_group] [-G group[,...]]
+						[-m [-k skeleton_dir] | -M] [-s shell]
+						[-u uid [ -o]] [-n] [-r] login
+		useradd -D [-g default_group] [-b default_home]
+						[-f default_inactive] [-e default_expire_date]
+						[-s default_shell]

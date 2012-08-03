@@ -1,0 +1,11 @@
+相關檔案 | Related Files
+	/etc/passwd
+		使用者帳號設定檔
+	/etc/shadow
+		使用者帳號密碼相關資訊設定檔
+	/etc/group
+		使用者群組設定檔
+	/etc/default/useradd
+		useradd預設值設定檔
+	/etc/login.defs
+		login軟體包裹定義設定檔（包含UID/GID可使用的範圍等設定）
