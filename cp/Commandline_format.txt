@@ -1,5 +1,13 @@
 命令列格式 | Commandline Format
 	man cp
-		cp [OPTION]... [-T] SOURCE DEST
+		cp [OPTION]... [--no-target-directory] SOURCE DEST
 		cp [OPTION]... SOURCE... DIRECTORY
-		cp [OPTION]... -t DIRECTORY SOURCE...
+		cp [OPTION]... --target-directory DIRECTORY SOURCE...
+	by Vdragon
+		cp （其他選項） 「來源檔案或目錄」 「目標目錄」
+			複製「來源檔案或目錄」至「目標目錄」
+		cp （其他選項） 「來源檔案」 「目標檔案名稱」
+			複製「來源檔案」為「目標檔案名稱」
+		cp （其他選項） --target-directory 「目標目錄名稱」 「來源檔案或目錄」
+			複製「來源檔案或目錄」至「目標目錄」
+			

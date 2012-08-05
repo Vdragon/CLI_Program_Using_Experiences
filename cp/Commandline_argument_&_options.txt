@@ -1,11 +1,20 @@
 命令列參數與選項 | Commandline auguments & options
 	「來源檔案或目錄」 「目標目錄」
 		將「來源檔案或目錄」複製到「目標目錄」
-	--archive
+	「來源檔案」 「目標檔案」
+		將「來源檔案」複製為「目標檔案」
+	-t/--target-directory 「目標目錄」 「來源檔案或目錄」
+		將「來源檔案或目錄」複製到「目標目錄」
+	--no-target-directory 「來源檔案」 「目標檔案」
+		將「來源檔案」複製為「目標檔案」即使目標路徑有跟「目標檔案」名稱相同的目錄
 	--attributes-only
 		不複製「來源檔案或目錄」，只複製「來源檔案或目錄」屬性
 	-f --force
-		如果「目標目錄」有相同名稱的檔案或目錄就覆寫之
+		如果「目標目錄」有相同名稱的檔案或目錄就開啟覆寫之
+	--remove-destination
+		如果「目標目錄」有相同名稱的檔案或目錄就移除後複製之
+	--strip-trailing-slashes
+		移除來源檔案路徑所有前方的目錄名稱
 	-i, --interactive
 		如果覆寫情形發生詢問是否覆寫檔案
 	-l, --link
@@ -19,12 +28,17 @@
 	-R, -r, --recursive
 		亦複製子目錄
 	-s, --symbolic-link
-		建立檔案的symbolic link而非複製檔案
+		建立檔案的symbolic連結而非複製檔案
 	-u, --update
 		當「來源檔案或目錄」比「目標目錄」還要新時才覆寫
+	-d
+		等同於--no-dereference --preserve=links
+	--archive
+		等同於--no-dereference --recursive --preserve=all
+		應該等同於與來源完全相同的複製
 	-v, --verbose
 		顯示進行的行為
 	-x, --one-file-system
-		不跨越到別的檔案系統
+		不將檔案操作跨越到別的檔案系統
 	--help
 		顯示幫助訊息
