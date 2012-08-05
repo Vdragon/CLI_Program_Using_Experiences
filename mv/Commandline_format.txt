@@ -1,0 +1,5 @@
+命令列格式 | Commandline Format
+	man mv
+		mv [OPTION]... [--no-target-directory] SOURCE DEST
+		mv [OPTION]... SOURCE... DIRECTORY
+		mv [OPTION]... --target-directory=DIRECTORY SOURCE...
