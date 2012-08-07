@@ -19,7 +19,9 @@
 	--defaults/-D （無其他參數）
 		顯示useradd預設值（來自/etc/defaults/useradd）
 	--defaults/-D 
-		變更useradd預設值（修改/etc/defaults/useradd）（此時沒有「使用者帳號名稱」參數）
-		...
-				-b/--base-dir 「新的預設家目錄會建立的路徑」
+		變更useradd預設值（會修改/etc/defaults/useradd）（此時沒有「使用者帳號名稱」參數）
+		-b/--base-dir 「新的預設家目錄會建立的路徑」
 			變更useradd預設的家目錄路徑設定
+		-s/--shell 「殼程式(shell)可執行檔路徑」
+			變更useradd預設的殼程式設定
+		
