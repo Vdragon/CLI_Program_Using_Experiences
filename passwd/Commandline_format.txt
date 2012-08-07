@@ -1,0 +1,2 @@
+命令列格式 | Commandline Format
+	passwd （選項） （使用者帳號名稱）

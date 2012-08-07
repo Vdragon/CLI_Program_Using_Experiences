@@ -1,0 +1,7 @@
+相關檔案 | Related Files
+	/etc/passwd
+		使用者帳號資訊
+	/etc/shadow
+		密碼等需要保密的使用者帳號資訊
+	/etc/pam.d/passwd
+		passwd的PAM設定
