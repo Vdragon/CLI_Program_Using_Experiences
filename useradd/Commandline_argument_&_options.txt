@@ -14,6 +14,8 @@
 		手動指定使用者預設的殼程式(shell)
 	-r --system
 		建立系統帳號而非使用者帳號
+	-m 自動建立使用者家目錄
+	-M 不建立使用者家目錄
 	--defaults/-D （無其他參數）
 		顯示useradd預設值（來自/etc/defaults/useradd）
 	--defaults/-D 
