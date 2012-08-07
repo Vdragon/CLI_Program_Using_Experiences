@@ -20,7 +20,6 @@
 		顯示useradd預設值（來自/etc/defaults/useradd）
 	--defaults/-D 
 		變更useradd預設值（修改/etc/defaults/useradd）（此時沒有「使用者帳號名稱」參數）
-		--home-dir 「新的家目錄路徑」
-			變更useradd預設值的家目錄路徑設定
 		...
-		
+				-b/--base-dir 「新的預設家目錄會建立的路徑」
+			變更useradd預設的家目錄路徑設定
