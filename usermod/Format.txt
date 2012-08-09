@@ -1,2 +1,7 @@
 格式 | Format
-
+	from man usermod
+		usermod [-c comment] [-d home_dir [ -m]]
+						[-e expire_date] [-f inactive_time]
+						[-g initial_group] [-G group[,...]]
+						[-l login_name] [-s shell]
+						[-u uid [ -o]] login
