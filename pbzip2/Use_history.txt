@@ -9,3 +9,4 @@
 				保存檔案資訊（如權限等）
 			--atime-preserve
 				保存存取時間(access time)
+		tar --create "linux-3.5.1/" | pbzip2 --best -m2000 --verbose > "linux-3.5.1-first-phase-patched.tar.bz2"
