@@ -1,5 +1,5 @@
 使用紀錄 | Use history
-	封裝目錄並重新導向給pigz進行多thread壓縮
+	用tar工具封裝目錄並重新導向給pigz進行多thread壓縮
 		tar --create "linux-3.4.3/" | pigz --best > "linux-3.4.3_patched_pigz.tar.gz"
 			--create
 				建立封存檔模式
