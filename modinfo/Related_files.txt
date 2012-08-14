@@ -1,0 +1,3 @@
+相關檔案 | Related Files
+	/lib/modules/「Linux作業系統核心版本」/
+		「Linux作業系統核心版本」作業系統核心的作業系統核心模組存放目錄

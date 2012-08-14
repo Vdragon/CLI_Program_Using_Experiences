@@ -1,0 +1,5 @@
+命令列格式 | Commandline Format
+	modinfo的使用手冊
+		modinfo  [-0]   [-F  field]   [-k  kernel]   [module‐name|filename ...]
+		modinfo -V
+		modinfo -h

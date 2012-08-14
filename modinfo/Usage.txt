@@ -1,0 +1,3 @@
+用途 | Usage
+	從modinfo的使用手冊
+		program to show information about a Linux Kernel module

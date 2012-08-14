@@ -1,0 +1,12 @@
+使用紀錄 | Use history
+	modinfo lp
+		輸出訊息 | Output Message
+			filename:       /lib/modules/3.4.6-ck3-intelcore2optimized-uksm-ck-bfq-patched-vdragon-mod/kernel/drivers/char/lp.ko
+			license:        GPL
+			alias:          char-major-6-*
+			srcversion:     0946BE622F5ED3946F6D2AA
+			depends:        parport
+			intree:         Y
+			vermagic:       3.4.6-ck3-intelcore2optimized-uksm-ck-bfq-patched-vdragon-mod SMP preempt mod_unload modversions CORE2 
+			parm:           parport:array of charp
+			parm:           reset:bool
