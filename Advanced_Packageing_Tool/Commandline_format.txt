@@ -1,0 +1,4 @@
+命令列格式 | Commandline Format
+	dpkg
+		from man dpkg
+			dpkg [option...] action
