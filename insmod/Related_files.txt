@@ -1,0 +1,3 @@
+相關檔案 | Related Files
+	/proc/modules
+		保存目前已載入的作業系統核心模組
