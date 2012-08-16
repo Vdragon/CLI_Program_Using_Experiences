@@ -2,3 +2,5 @@
 	備份／還原「/media/Data」目錄下的檔案與目錄
 		sudo cp --archive --verbose --no-clobber /media/S_Data .
 		sudo cp --archive --verbose --no-clobber . /media/S_Data
+	透過修改時間更新較舊的檔案
+		sudo cp  --recursive --update --no-dereference --preserve=all --verbose ~/Dropbox /media/SSD_Ubuntu/home/Vdragon/
