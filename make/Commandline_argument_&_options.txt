@@ -1,3 +1,5 @@
 命令列參數與選項 | Commandline auguments & options
 	-C/--directory 「目錄」
 		切換工作目錄至「目錄」後再執行命令
+	-n, --just-print, --dry-run, --recon
+		只印出而不執行命令
