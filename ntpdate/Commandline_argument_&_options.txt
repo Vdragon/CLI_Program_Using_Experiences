@@ -1,0 +1,14 @@
+命令列參數與選項 | Commandline auguments & options
+	「NTP伺服器的網路位址」
+	-d
+		啟用除錯模式
+	-q
+		只詢問(query)時間（不變更系統時鐘）
+		（q為query的縮寫）
+	-s
+		將運行紀錄轉到system syslog facility而非由標準輸出(standard output)輸出
+	-v
+		印出更詳細的訊息
+	-t 「超時時間」
+		設定「超時時間」之後連線會超時（單位：秒）（會自動約為0.2的倍數）（預設：1）
+	

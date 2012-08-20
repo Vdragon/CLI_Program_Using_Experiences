@@ -1,0 +1,5 @@
+使用紀錄 | Use history
+	查詢網路時間
+		ntpdate -q tock.stdtime.gov.tw
+	透過NTP時間伺服器校正系統時間
+		sudo ntpdate tock.stdtime.gov.tw
