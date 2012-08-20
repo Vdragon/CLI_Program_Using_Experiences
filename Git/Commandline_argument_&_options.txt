@@ -133,6 +133,11 @@
 			重新命名遠端repository的參照(reference)名稱
 		set-url 「遠端repository名稱」 「新遠端repository網址」
 			重新設定遠端repository的網路位址
+		prune （prune可用選項） 「遠端repository名稱」
+			移除遠端內容倉庫中已不存在的分支(branch)的reference
+				prune可用選項
+					--dry-run
+						只印出會被移除的分支
 	git fetch
 		「遠端repository名稱」
 			將「遠端repository名稱」內容倉庫(content repository)的修改匯入到本地內容倉庫（未形成commit）
