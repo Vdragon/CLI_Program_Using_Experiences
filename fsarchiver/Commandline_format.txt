@@ -1,0 +1,14 @@
+命令列格式 | Commandline Format
+	源自「fsarchiver」的使用手冊
+		fsarchiver [ options ] savefs archive filesystem ...
+			備份檔案系統
+		fsarchiver [ options ] restfs archive id=n,dest=filesystem[,mkfs=fstype] ...
+			還原檔案系統
+		fsarchiver [ options ] savedir archive directory ...
+			保存目錄至封存檔
+		fsarchiver [ options ] restdir archive destination
+			還原封存檔之目錄
+		fsarchiver [ options ] archinfo archive
+			顯示封存檔的資訊
+		fsarchiver [ options ] probe [detailed]
+			顯示磁碟中偵測到的檔案系統
