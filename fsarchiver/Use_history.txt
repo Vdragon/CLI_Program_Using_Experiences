@@ -1,5 +1,7 @@
 使用紀錄 | Use history
 	備份ubuntu檔案系統
 		fsarchiver -j3 --split=4300 savefs Puli-PC-ubuntu01.filesystem_archive /dev/sda3
+	還原ubuntu檔案系統
+		fsarchiver -v restfs ubuntu01.filesystem_archive id=0,dest=/dev/sda1
 	顯示目前磁碟中的檔案系統資訊
 		fsarchiver probe simple
