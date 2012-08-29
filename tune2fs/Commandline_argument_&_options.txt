@@ -1,0 +1,9 @@
+命令列參數與選項 | Commandline auguments & options
+	-U 「UUID(universally unique identifier)」
+		設定檔案系統的UUID(universally unique identifier)，或是下列三種特殊選項
+			clear
+				清除UUID
+			random
+				隨機建立UUID
+			time
+				建立以時間為基礎產生的UUID
