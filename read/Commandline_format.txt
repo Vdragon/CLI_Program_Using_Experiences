@@ -1,0 +1,4 @@
+命令列格式 | Commandline Format
+	源自「bash」的使用手冊
+		read  [-ers]  [-a  aname] [-d delim] [-i text] [-n nchars] [-N nchars] [-p prompt] [-t timeout] [-u fd] [name ...]
+		

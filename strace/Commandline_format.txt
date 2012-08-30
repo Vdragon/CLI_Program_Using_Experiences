@@ -1,0 +1,4 @@
+命令列格式 | Commandline Format
+	源自「strace」的使用手冊
+		strace  [ -CdffhiqrtttTvxx  ] [ -acolumn ] [ -eexpr ] ... [ -ofile ] [ -ppid ] ... [ -sstrsize ] [ -uusername ] [ -Evar=val ] ... [ -Evar ] ... [ command  [ arg  ... ] ]
+		strace  -c  [ -eexpr ] ... [ -Ooverhead ] [ -Ssortby ] [ command  [ arg  ... ] ]
