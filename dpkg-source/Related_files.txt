@@ -1,0 +1,3 @@
+相關檔案 | Related Files
+	*.dsc
+		「Debian source control file」的副檔名
