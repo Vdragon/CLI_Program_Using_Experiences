@@ -8,4 +8,4 @@ SYNOPSIS
 #猜測字元編碼
 enca --language=zh --guess --details 「檔案」
 #配合iconv使用
-iconv --verbose --from-code `enca --language=zh --guess --iconv-name` --to-code UTF8 --output 「轉換輸出檔案」「欲轉換檔案」
+iconv --verbose --from-code $(enca --language=zh --guess --iconv-name) --to-code UTF8 --output 「轉換輸出檔案」「欲轉換檔案」
