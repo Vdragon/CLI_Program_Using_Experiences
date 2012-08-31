@@ -1,3 +1,5 @@
 命令列參數與選項 | Commandline auguments & options
+	「命令」 （命令參數）
+		要追蹤的「命令」跟（命令參數）
 	-o 「檔案」
 		將輸出資料寫到「檔案」而非自標準錯誤(standard error)輸出輸出
