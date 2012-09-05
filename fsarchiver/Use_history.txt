@@ -1,7 +1,10 @@
 使用紀錄 | Use history
-	備份ubuntu檔案系統
+	備份作業系統
 		fsarchiver -j3 --split=4300 savefs Puli-PC-ubuntu01.filesystem_archive /dev/sda3
-	還原ubuntu檔案系統
-		fsarchiver -v restfs ubuntu01.filesystem_archive id=0,dest=/dev/sda1
+		fsarchiver -j2 --split=4400 --verbose --label="Filesystem0 is boot partition(probably ext3), Filesystem1 is root partition(special ext3)" savefs Lab-Original-RedHat9-01.filesystem_archive /dev/sda1 /dev/sda2
+		fsarchiver -j2 --split=4400 --verbose --label="RedHat9 backup, installed modem,ethernet driver...maybe more" savefs 2012-09-02-RedHat9-01.filesystem_archive /dev/sdc2
+	還原作業系統
+		fsarchiver --verbose restfs ubuntu01.filesystem_archive id=0,dest=/dev/sda1
+		fsarchiver --verbose restfs Lab-Original-RedHat9-01.filesystem_archive id=1,dest=/dev/sdc2
 	顯示目前磁碟中的檔案系統資訊
 		fsarchiver probe simple
