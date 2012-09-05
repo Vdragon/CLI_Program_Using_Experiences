@@ -7,3 +7,18 @@
 				隨機建立UUID
 			time
 				建立以時間為基礎產生的UUID
+	-L 「new label」
+		configure label of the filesystem
+	-j
+		add ext3 journal to the filesystem
+	-l
+		print superblock information
+	-o [^]mount-option[,...]
+		set or unset(option name preceded by caret(^) symbol) mount options
+		partial mount option list
+			discard
+				Enable TRIM/DISCARD feature for SSDs to reused deleted blocks(supported by EXT4 and new kernels)
+	-O [^]feature[,...]
+		set or unset filesystem feature
+	-Q quota-options
+		set or unset quota related option

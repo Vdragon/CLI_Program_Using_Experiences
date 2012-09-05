@@ -1,3 +1,5 @@
 使用紀錄 | Use history
 	隨機產生磁碟分割區的UUID
 		tune2fs -U random /dev/sda1
+	set new label of /dev/sdc2
+		tune2fs -L "Redhat" /dev/sdc2
