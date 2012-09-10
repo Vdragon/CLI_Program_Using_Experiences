@@ -1,0 +1,4 @@
+命令列格式 | Commandline Format
+	源自patch的使用手冊
+		patch [options] [originalfile [patchfile]]
+		patch --strip=「數字」 < patchfile

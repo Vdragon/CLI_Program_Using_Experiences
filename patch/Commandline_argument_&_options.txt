@@ -1,0 +1,43 @@
+命令列參數與選項 | Commandline auguments & options
+	-b  or  --backup
+		製作原始檔案的備份
+	--dry-run
+		僅印出會進行的動作
+	-F num  or  --fuzz=num
+		設定maximum  fuzz factor
+	-i 「修正(patch)檔」 or --input 「修正(patch)檔」
+		自「修正(patch)檔」讀取修正資料，預設為標準輸入(standard input(-))
+	--help
+		印出幫助訊息
+	--merge
+	-n --normal
+	-p「整數」 --strip=「整數」
+		去除被修正檔案路徑多少個層父目錄
+		範例 | Example
+			原始修正(patch)檔內容、--strip=0 (-p0)
+				--- a/security/apparmor/Makefile
+				+++ b/security/apparmor/Makefile
+			--strip=1 (-p1)
+				--- security/apparmor/Makefile
+				+++ security/apparmor/Makefile
+			--strip=2 (-p2)
+				--- apparmor/Makefile
+				+++ apparmor/Makefile
+			--strip=3 (-p3) 或未指定 --strip
+				--- Makefile
+				+++ Makefile
+	-s --silent --quiet
+		只印出錯誤訊息
+	-v --version
+		印出版本訊息
+	--verbose
+		印出更詳細的訊息
+	-Z --set-utc
+		修改被修正(patch)的檔案的修改時間和存取時間為diff header的時間（假定使用UTC時間）
+	-T --set-time
+	-Z --set-utc
+		修改被修正(patch)的檔案的修改時間和存取時間為diff header的時間（假定使用本地時間）
+	-d 「目錄」 --directory=「目錄」
+		修正前先進入「目錄」
+	-R or --reverse
+		反向修正(patch)內容

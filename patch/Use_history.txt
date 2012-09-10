@@ -1,0 +1,2 @@
+使用紀錄 | Use history
+	patch --strip=1 --reverse --input=000
