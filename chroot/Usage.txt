@@ -1,0 +1,3 @@
+用途 | Usage
+	源自「chroot」的使用手冊
+		run command or interactive shell with special root directory

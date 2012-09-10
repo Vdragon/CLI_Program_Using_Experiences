@@ -1,0 +1,4 @@
+命令列格式 | Commandline Format
+	源自「chroot」的使用手冊
+		chroot [OPTION] NEWROOT [COMMAND [ARG]...]
+		chroot OPTION
