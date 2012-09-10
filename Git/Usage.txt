@@ -1,4 +1,8 @@
 用途 | Usage
+	git init
+		初始化內容倉庫(content repository)
+	git status
+		查看Git的狀態
 	git config
 		編輯系統／特定內容倉庫(content repository)範圍的Git設定值的命令
 	git add
