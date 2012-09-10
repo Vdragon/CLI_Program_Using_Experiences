@@ -1,0 +1,5 @@
+使用紀錄 | Use history
+	掛載磁碟分割區
+		udisks --mount /dev/sda1
+	卸載磁碟分割區
+		udisks --unmount /dev/sda1

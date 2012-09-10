@@ -1,0 +1,23 @@
+命令列參數與選項 | Commandline auguments & options
+	--dump
+		印出可用來除錯的資訊
+	--enumerate
+		列舉(enumerate)出所有已知的的裝置的object path
+	--enumerate-device-files
+		列舉(enumerate)出所有已知的的裝置的裝置檔案
+	--monitor
+		與幕後程式(daemon)連線，印出發生的事件
+	--monitor-detail
+		與幕後程式(daemon)連線，（更詳細地）印出發生的事件
+	--mount 「裝置檔案」 （--mount-fstype 「檔案系統類型」） （--mount-options 「掛載選項」）
+		以「掛載選項」掛載「檔案系統類型」的「裝置檔案」檔案系統
+		「掛載選項」為以逗號分隔的選項序列（無間隔空白）
+	--unmount 「裝置檔案」 （--unmount-options 「卸載選項」）
+		以「卸載選項」卸載「檔案系統類型」的「裝置檔案」檔案系統
+		「卸載選項」為以逗號分隔的選項序列（無間隔空白）
+	--detach 「裝置檔案」 （--detach-options 「移除選項」）
+		移除（斷電）「裝置檔案」裝置
+	--eject 「裝置檔案」 （--eject-options 「退出選項」）
+		退出裝置內的媒體
+	--help
+		印出幫助訊息
