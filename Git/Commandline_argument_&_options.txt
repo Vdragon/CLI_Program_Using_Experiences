@@ -180,9 +180,9 @@
 			顯示目前已經merge進其他分支的分支名稱，沒有標示*的分支可以安全刪除
 		--no-merged
 			顯示所有未merge進其他分支的分支名稱
-		-d 「branch名稱」
-			刪除一個分支
-				當--remotes選項存在時為刪除遠端分支的reference而非實際刪除遠端分支，該操作可用git push 「程式碼倉庫」 :「分支名稱」來達成
+		-d 「branch名稱」, --delete 「branch名稱」
+			刪除分支(branch)
+				當--remotes選項存在時為刪除遠端分支的reference而非實際刪除遠端分支，該操作可用git push 「程式碼倉庫」:「分支名稱」來達成
 				如果該分支的內容變更沒有合併(merge)到其他分支的話以策安全將不會實際刪除分支
 		-D 「branch名稱」
 			強制刪除一個未合併(merge)內容變更到其他分支的分支
