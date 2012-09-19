@@ -169,7 +169,7 @@
 		（無參數）
 			察看本地端的分支(branch)
 		-r --remotes
-			改為存取遠端分支
+			改為查看遠端分支
 		「branch名稱」
 			新建「branch名稱」分支(branch)
 		-v --verbose
