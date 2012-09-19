@@ -170,6 +170,8 @@
 			察看本地端的分支(branch)
 		-r --remotes
 			改為查看遠端分支
+		-a --all
+			查看所有的分支（本地端及遠端）
 		「branch名稱」
 			新建「branch名稱」分支(branch)
 		-v --verbose
