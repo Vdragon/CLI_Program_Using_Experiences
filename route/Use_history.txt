@@ -1,0 +1,2 @@
+使用紀錄 | Use history
+	route add default gw 140.121.198.254

@@ -1,0 +1,2 @@
+使用紀錄 | Use history
+	ifconfig eth0 inet hw ether 00:13:D4:4B:8F:9F up netmask 255.255.252.0 140.121.196.115

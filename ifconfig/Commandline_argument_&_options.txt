@@ -1,0 +1,40 @@
+命令列參數與選項 | Commandline auguments & options
+	-a
+		show all interfaces including down ones
+	-v
+		be more verbose for some error conditions
+	<interface> (address family type) <interface option(s)>
+		interface name and its address family type
+		incomplete list of address family type
+			inet
+				TCP/IP version 4
+			inet6
+				TCP/IP version 6
+		incomplete list of interface option
+			up
+				activate the interface
+			down
+				deactivate the interface
+			(-)arp
+				enable(arp) or disable(-arp) the ARP protocol
+			(-)promisc
+				Enable(promisc) or disable(-promisc) the promiscuous mode  of  the  interface.   If Enabled,  all  packets  on  the network will be received by the interface.
+			mtu <number>
+				set the Maximum Transfer Unit (MTU) of an interface to <number>
+				TODO: whats the scale?
+			netmask <address mask>
+				set the subnet mask to <address mask>
+			media <media type>
+				set the physical media used by the interface
+				Incomplete list
+					10base2
+					10baseT
+					auto
+			(-)broadcast (broadcast address)
+			hw <class> <new hardware address>
+				set the hardware address(or M.A.C. address) ot the interface
+				Incomplete list of <class>
+					ether
+			<ip address>
+				the IP address assigned to the interface
+

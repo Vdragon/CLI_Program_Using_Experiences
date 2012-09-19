@@ -1,0 +1,3 @@
+用途 | Usage
+	源自「route」的使用手冊
+		show / manipulate the IP routing table
