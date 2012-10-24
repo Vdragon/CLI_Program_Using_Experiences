@@ -62,7 +62,11 @@
 			user
 			nouser
 			users
-			
+		tmpfs 檔案系統的掛載選項列表
+			size=「以位元組(byte)為單位的大小」
+			mode=「tmpfs 檔案系統根目錄的預設權限」
+			uid=
+			gid=
 	--bind
 		將一已存在目錄掛載至另一目錄（限制在一個檔案系統內）
 	--rbind
