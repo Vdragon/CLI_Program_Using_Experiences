@@ -1,7 +1,7 @@
 使用紀錄 | Use history
 	掛載(mount) FAT32(VFAT) 檔案系統
-		mount -t vfat -o rw,utf8,umask=117,gid=46,showexec,errors=remount-ro
-			-t vfat
+		mount --types vfat --options rw,utf8,umask=117,gid=46,showexec,errors=remount-ro
+			--types vfat
 				檔案系統類型為FAT檔案系統
 			-o
 				rw
@@ -18,8 +18,8 @@
 						remount-ro
 							以唯讀模式重新掛載
 	掛載 EXT4 檔案系統
-		mount -t ext4 -o rw,errors=remount-ro
-			-t ext4
+		mount --types ext4 --options rw,errors=remount-ro
+			--types ext4
 				檔案系統類型為EXT4檔案系統
 			-o
 				rw
