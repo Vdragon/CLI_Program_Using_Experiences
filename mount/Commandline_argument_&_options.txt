@@ -1,8 +1,68 @@
 命令列參數與選項 | Commandline auguments & options
-	-t
+	--verbose / -v
+		印出更詳細的資訊
+	--all / -a
+		掛載所有 /etc/fstab 檔案中的檔案系統
+	--fake / -f
+		不實際呼叫系統呼叫(system call)掛載檔案系統
+		可搭配 -v 選項觀察 mount 命令所做的行動
+	--types / -t
 		(type)欲掛載之磁碟分割區之檔案系統類型
-	-o
+		不完整的可用選項
+			ext4
+			msdos
+			vfat
+			ext3
+			ext2
+			tmpfs
+	--internal-only
+		使用 mount 自己的掛載程序，不執行 /sbin/mount.「檔案系統類型」 輔助程式
+	-r, --read-only
+		以唯讀模式掛載檔案系統
+	-w, --rw
+		以可寫模式掛載檔案系統（預設開啟）
+	-L 「檔案系統標籤」
+	掛載檔案系統標籤為「檔案系統標籤」的檔案系統
+	-U 「UUID」
+		掛載UUID為「UUID」的檔案系統
+	--options / -o 「以半形逗號分隔的掛載選項序列」
 		掛載選項
+		不依賴於特定檔案系統的掛載選項列表
+			sync
+				同步進行讀寫操作
+			async
+				不同步進行讀寫操作
+			atime
+				更新 inode 的存取時間（實際上會不會由作業系統核心預設值決定）
+			noatime
+				不更新 inode 的存取時間
+			auto
+				檔案系統會於 mount --all / -a 命令執行時被掛載
+			noauto
+				檔案系統不會於 mount --all / -a 命令執行時被掛載
+			defaults
+				使用 mount 預設的掛載選項：rw,suid,dev,exec,auto,nouser,async
+			dev
+				允許裝置檔案的建立
+			nodev
+				不允許裝置檔案的建立
+			exec
+				允許二進位可執行檔的執行
+			noexec
+				不允許二進位可執行檔的執行
+			nofail
+				當檔案系統所在裝置不存在時不回報錯誤
+			suid
+			nosuid
+			owner
+			group
+			remount
+			ro
+			rw
+			user
+			nouser
+			users
+			
 	--bind
 		將一已存在目錄掛載至另一目錄（限制在一個檔案系統內）
 	--rbind
