@@ -26,4 +26,5 @@
 					允許寫入操作
 				errors=remount-ro
 					當發生錯誤時重新掛載為唯讀模式
-		
+	掛在 tmpfs 檔案系統（RAM 磁碟）
+		mount --types tmpfs --options rw,size=8G,uid=Vdragon,gid=Vdragon,mode=0700 tmpfs RAM_disk/
