@@ -1,0 +1,18 @@
+使用紀錄 | Use history
+	備份 MS-DOS 磁碟分割表的 MBR(Master Boot Record) 區域
+		dd if=/dev/sda of=SSD_MBR.bin bs=512 count=1
+	備份磁碟分割區的 boot sector
+		dd if=/dev/sda2 of=SSD_grub_partition_sector.bin bs=512 count=1
+	磁碟分割區的最後一個 sector（NTFS檔案系統中最後一個sector同boot sector資料）
+		磁碟分割區原始分佈裝況
+			編號  起始點       結束點       大小         類型      檔案系統        旗標
+			1    63s          209728574s   209728512s   primary   ext4
+			2    209728575s   419457149s   209728575s   primary   ntfs
+			3    419459072s   608204799s   188745728s   primary   ntfs            啟動
+			4    608204896s   1953520064s  1345315169s  extended                  lba
+			5    608204898s   629185724s   20980827s    logical   linux-swap(v1)
+			6    629185788s   838914299s   209728512s   logical   ext4
+			7    838914363s   1048642874s  209728512s   logical   ntfs
+			8    1048642938s  1953520064s  904877127s   logical   ntfs
+		命令
+			dd if=/dev/sdb of=SSD_win8_last_sector.bin bs=512 count=1 skip=608204799

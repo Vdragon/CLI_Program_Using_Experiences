@@ -1,0 +1,4 @@
+命令列格式 | Commandline Format
+	源自「dd」的使用手冊
+		dd [OPERAND]...
+		dd OPTION

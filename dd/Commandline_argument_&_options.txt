@@ -1,0 +1,5 @@
+命令列參數與選項 | Commandline auguments & options
+	if=「輸入檔案路徑」
+	of=「輸出檔案路徑」
+	bs=「指定一個block的大小（單位：byte）」
+	count=「複製的block數」
