@@ -1,6 +1,0 @@
-用途 | Usage
-	管理 Debian軟體包裹 的一系列工具
-	dpkg
-		後端(backend)處理（安裝、移除）Debian軟體包裹的程式
-	apt-get
-		APT的前端程式

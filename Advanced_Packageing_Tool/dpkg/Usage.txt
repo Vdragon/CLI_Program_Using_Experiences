@@ -1,0 +1,3 @@
+用途 | Usage
+	dpkg
+		後端(backend)處理（安裝、移除）Debian軟體包裹的程式
