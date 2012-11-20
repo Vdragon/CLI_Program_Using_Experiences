@@ -1,0 +1,3 @@
+使用紀錄 | Use history
+	驗證 Linux 作業系統核心原始程式碼的完整性
+		bunzip2 --stdout linux-3.6.5.tar.bz2 | gpg --verify linux-3.6.5.tar.sign -

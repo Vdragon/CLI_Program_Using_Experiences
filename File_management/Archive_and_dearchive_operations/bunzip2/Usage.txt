@@ -1,0 +1,3 @@
+用途 | Usage
+	源自「bunzip2」的使用手冊
+		bunzip2 (or bzip2 -d) decompresses all specified files.
