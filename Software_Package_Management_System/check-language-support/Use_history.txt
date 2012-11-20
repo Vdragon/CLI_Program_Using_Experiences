@@ -1,0 +1,5 @@
+使用紀錄 | Use history
+	列出所有未安裝的 zh_TW 語系軟體包
+		check-language-support --language=zh_TW
+	安裝所有未安裝的 zh_TW 語系軟體包
+		apt-get install $(check-language-support --language=zh_TW)

@@ -1,0 +1,15 @@
+命令列參數與選項 | Commandline auguments & options
+	-h / --help
+		印出幫助訊息
+	-l 「要輸出的語系代碼」 / --language=「要輸出的語系代碼」
+		預設檢查所有系統有安裝的語系
+		「語系代碼」格式
+			'll' or 'lll'
+			'll_CC' or 'lll_CC'
+			'll@variant' or 'lll@variant'
+			'll_CC@variant' or 'lll_CC@variant'
+			Also supported are 'zh-hans' and 'zh-hant'
+	-a / --all
+		檢查所有的語系
+	--show-installed
+		同時印出已安裝的軟體包

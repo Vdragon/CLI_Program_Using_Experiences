@@ -1,0 +1,4 @@
+用途 | Usage
+	源自「check-language-support」的使用手冊
+		returns the list of missing packages in order to provide a complete language environment
+	檢查目前沒安裝的語言相關軟體包
