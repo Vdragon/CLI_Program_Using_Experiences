@@ -3,7 +3,11 @@
 		mount --types vfat --options rw,utf8,umask=117,gid=46,showexec,errors=remount-ro
 			--types vfat
 				檔案系統類型為FAT檔案系統
+<<<<<<< HEAD
 			--options
+=======
+			-o
+>>>>>>> 19feb514dc3564f0ba894f1389318c0e2bff868f
 				rw
 					允許寫入操作
 				umask=117
