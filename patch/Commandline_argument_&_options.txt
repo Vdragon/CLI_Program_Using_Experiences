@@ -2,7 +2,7 @@
 	-b  or  --backup
 		製作原始檔案的備份
 	--dry-run
-		僅印出會進行的動作
+		僅印出會進行的內容修正與套用結果，不實際修正內容
 	-F num  or  --fuzz=num
 		設定maximum  fuzz factor
 	-i 「修正(patch)檔」 or --input 「修正(patch)檔」
