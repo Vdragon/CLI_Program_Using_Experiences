@@ -1,0 +1,14 @@
+命令列參數與選項 | Commandline auguments & options
+	--id / -i
+		印出散佈者的 ID
+		例如 Ubuntu 散佈版印出「Distributor ID:	Ubuntu」
+	--release / -r
+		印出散佈版的釋出版本號碼
+	--codename / -c
+		印出散佈版的開發代號(codename)
+	--all / -a
+		印出所有資訊
+	--short / -s
+		只印出屬性數值，不印出屬性名稱
+	--help / -h
+		印出幫助訊息

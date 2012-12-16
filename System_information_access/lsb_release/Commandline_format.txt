@@ -1,0 +1,4 @@
+命令列格式 | Commandline Format
+	源自「lsb_release」的使用手冊
+		lsb_release [options]
+	
