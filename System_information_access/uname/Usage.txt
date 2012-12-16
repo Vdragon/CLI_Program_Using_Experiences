@@ -1,0 +1,4 @@
+用途 | Usage
+	源自「uname」的使用手冊
+		print system information
+	印出作業系統核心所偵測到的系統資訊

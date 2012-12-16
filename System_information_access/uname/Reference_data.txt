@@ -1,0 +1,3 @@
+參考資料 | Reference data
+	linux - What's the difference between "uname -r" and "uname -v"? - Super User
+		http://superuser.com/questions/442564/whats-the-difference-between-uname-r-and-uname-v

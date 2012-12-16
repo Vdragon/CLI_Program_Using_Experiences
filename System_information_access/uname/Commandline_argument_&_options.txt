@@ -1,0 +1,22 @@
+命令列參數與選項 | Commandline auguments & options
+	--all / -a 
+		印出所有資訊
+	--kernel-name / -s
+		印出作業系統核心名稱
+		例如「Linux」
+	--kernel-release / -r
+		印出作業系統核心釋出版本
+		例如「3.6.8-ck1-intelc2-uksm-urdahd-bfq-wo-aa」
+	--kernel-version / -v
+		印出作業系統核心版本詳細資訊
+		例如「#1 SMP PREEMPT Thu Nov 29 04:36:16 CST 2012」
+	--machine / -m
+	--processor / -p
+		印出中央處理器(CPU)所（至少）支援的指令集架構(ISA)
+			例如「i686」（Intel x86 32 位元處理器架構）	
+	--hardware-platform / -i
+	--operating-system / -o
+		印出作業系統名稱
+	--nodename / -n
+		印出網路節點名稱（主機名稱(hostname)）
+		
