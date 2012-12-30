@@ -1,0 +1,5 @@
+用途 | Usage
+	源自 apt-file 的使用手冊
+		APT package searching utility -- command-line interface
+	Ｖ字龍
+		可用來搜尋檔案位於哪個 APT 軟體包中

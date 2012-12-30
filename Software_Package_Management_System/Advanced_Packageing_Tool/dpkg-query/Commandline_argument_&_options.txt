@@ -1,0 +1,5 @@
+命令列參數與選項 | Commandline auguments & options
+	--search 「搜尋關鍵字」 / -S 「搜尋關鍵字」
+		搜尋哪個軟體包內有包含「搜尋關鍵字」名稱的檔案
+	-l 「想搜索的pattern」 / --list 「想搜索的pattern」
+		搜索特定名稱的軟體包

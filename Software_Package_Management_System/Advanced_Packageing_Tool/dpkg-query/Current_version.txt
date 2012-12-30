@@ -1,2 +1,0 @@
-##搜索特定名稱的套件
-dpkg-query --list 「想搜索的pattern」

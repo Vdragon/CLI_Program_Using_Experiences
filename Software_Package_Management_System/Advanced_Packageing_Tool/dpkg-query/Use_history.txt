@@ -1,0 +1,4 @@
+使用紀錄 | Use history
+	dpkg-query --search lsdvb
+		輸出結果
+			dvb-apps: /usr/bin/lsdvb

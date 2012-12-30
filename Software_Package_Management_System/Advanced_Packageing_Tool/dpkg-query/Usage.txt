@@ -1,0 +1,4 @@
+用途 | Usage
+	源自 apt-query 的使用手冊
+		a tool to query the dpkg database
+	

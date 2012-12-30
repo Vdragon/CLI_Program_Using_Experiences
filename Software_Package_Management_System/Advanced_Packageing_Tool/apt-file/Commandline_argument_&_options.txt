@@ -1,0 +1,5 @@
+命令列參數與選項 | Commandline auguments & options
+	update
+		自 APT 軟體來源更新軟體中的軟體包的資訊，需執行過一遍方可使用 search/find 選項
+	search 「檔案名稱」 / find 「檔案名稱」
+		搜尋「檔案名稱」的檔案位於哪個軟體包

@@ -1,0 +1,5 @@
+命令列格式 | Commandline Format
+	源自 apt-file 的使用手冊
+		apt-file [ options ] [ action ] [ pattern ]
+		apt-file -f [ options ] search [ file ... ]
+		apt-file -D [ options ] search [ binary-packet.deb ... ]
