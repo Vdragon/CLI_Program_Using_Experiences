@@ -1,12 +1,11 @@
 命令列參數與選項 | Commandline auguments & options
-	dpkg
-		（軟體包裹檔案名稱）
-		--install
-			安裝軟體包裹
-		--force-「對象」
-			強迫「對象」方面的處理
-				「對象」列表
-					all
-						所有項目
-					overwrite
-						檔案的複寫
+	--install 「檔案名稱」 / -i 「檔案名稱」
+		安裝「檔案名稱」的軟體包裹
+	--force-「對象」
+		強迫「對象」方面的處理
+			「對象」列表
+				all
+					所有項目
+				overwrite
+					檔案的複寫
+	
