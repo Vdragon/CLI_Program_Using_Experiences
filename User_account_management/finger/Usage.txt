@@ -1,0 +1,3 @@
+用途 | Usage
+	源自「finger」的使用手冊
+		user information lookup program
