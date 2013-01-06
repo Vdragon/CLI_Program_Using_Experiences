@@ -1,0 +1,4 @@
+內容重新導向
+Content redirections
+	< 「SQL 查詢批次檔」
+	> 「查詢結果輸出」
