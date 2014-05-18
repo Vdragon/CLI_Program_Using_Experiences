@@ -10,3 +10,5 @@
 			--atime-preserve
 				保存存取時間(access time)
 		tar --create "linux-3.4.10/" | pbzip2 --best -m2000 --verbose > "/media/FILES/DATA/軟體倉庫/系統相關軟體/作業系統核心(Operating System Kernel)/Linux Kernel/3.4.10/原始程式碼(Source_code)/linux-3.4.10-first-phase-patched.tar.bz2"
+	Decompress bzip archiver multithreadly by pbzip2 piped to tar
+		pbzip2 -dc -m2000 -p6 Vdragon_home20130122.tar.bz2 | tar --extract --preserve --overwrite --atime-preserve --directory='/tmp/Vdragon/Chroot_helper/Chrooted_root/home/'
