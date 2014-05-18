@@ -1,4 +1,13 @@
 命令列參數與選項 | Commandline auguments & options
+	git status
+		-u --untracked-files=「輸出模式」
+			輸出尚未納入版本追蹤的檔案清單，「輸出模式」可以指定輸出此清單的方式：
+				all（預設值）
+					輸出當前工作目錄與子目錄底下的項目
+				normal
+					僅輸出當前工作目錄底下的項目
+				no
+					不輸出
 	git config
 		--global
 			修改全域而非內容倉庫(content repository)範圍的設定值
