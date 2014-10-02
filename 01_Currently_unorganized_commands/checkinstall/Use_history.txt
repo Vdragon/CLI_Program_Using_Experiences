@@ -1,0 +1,7 @@
+使用紀錄
+Use history
+	安裝並打包軟體包
+		# checkinstall 
+			為了避免重複輸入相同內容，直接於命令列中指定 --pkgname=〈軟體包名稱〉 --pkgversion=〈軟體包版本〉 --pkgrelease=〈軟體包釋出編號(?)〉 --pkglicense=〈軟體授權條款〉 --maintainer=〈軟體包維護者名稱（要保護特殊字元避免被殼程式(shell)解釋）〉 --requires=〈軟體包依賴關係清單〉較方便
+	只建構軟體包而不安裝它（理論上不需要 root 身份即可執行）
+		$ checkinstall --install=no --fstrans

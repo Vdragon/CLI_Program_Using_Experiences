@@ -1,0 +1,5 @@
+命令列格式
+Commandline Format
+	源自「程式名稱」的使用手冊
+		checkinstall [options] [install command]
+	

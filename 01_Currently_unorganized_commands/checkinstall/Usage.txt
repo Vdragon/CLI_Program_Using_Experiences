@@ -1,0 +1,5 @@
+用途
+Usage
+	源自「程式名稱」的使用手冊
+		Track installation of local software, and produce a binary manageable with your package management software.
+	

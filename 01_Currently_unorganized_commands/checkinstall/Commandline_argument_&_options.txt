@@ -1,0 +1,8 @@
+命令列參數與選項
+Commandline auguments & options
+	--fstrans
+		檔案系統路徑轉換功能：將檔案的安裝進行於一個暫時目錄中而不存取系統目錄。
+	--pkgname
+		設定軟體包名稱
+	--pkgversion
+		設定軟體包版本
